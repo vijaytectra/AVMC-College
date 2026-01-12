@@ -1,0 +1,55 @@
+name: Frontend CI/CD Vercel (Branch Based)
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - feature/*
+
+jobs:
+  frontend-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout
+      - uses: actions/checkout@v4
+
+      # 2️⃣ Node setup
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # 3️⃣ Install deps
+      - name: Install dependencies
+        run: npm install
+
+      # 4️⃣ Lint (CI gate)
+      - name: Run ESLint
+        run: npm run lint
+
+      # 5️⃣ Build
+      - name: Build frontend
+        run: npm run build
+        env:
+          NEXT_PUBLIC_API_URL: |
+            ${{ github.ref_name == 'main' && secrets.NEXT_PUBLIC_API_URL_PROD ||
+                github.ref_name == 'staging' && secrets.NEXT_PUBLIC_API_URL_STAGING }}
+          NODE_ENV: ${{ github.ref_name == 'main' && 'production' || 'development' }}
+
+      # 6️⃣ Deploy to STAGING (only staging branch)
+      - name: Deploy to Vercel (Staging)
+        if: github.ref_name == 'staging'
+        run: npx vercel --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      # 7️⃣ Deploy to PRODUCTION (only main branch)
+      - name: Deploy to Vercel (Production)
+        if: github.ref_name == 'main'
+        run: npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
