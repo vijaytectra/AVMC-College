@@ -15,11 +15,9 @@ jobs:
     environment: ${{ github.ref_name == 'main' && 'production' || 'staging' }}
 
     steps:
-      # 1️⃣ Checkout repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node.js (FIXED: Node 20)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -27,25 +25,20 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
 
-      # 3️⃣ Install dependencies
       - name: Install dependencies
         working-directory: frontend
         run: npm ci
 
-      # 4️⃣ Run ESLint
       - name: Run ESLint
         working-directory: frontend
         run: npm run lint
 
-      # 5️⃣ Build Next.js app
       - name: Build frontend
         working-directory: frontend
         run: npm run build
         env:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
-          NODE_ENV: ${{ github.ref_name == 'main' && 'production' || 'development' }}
 
-      # 6️⃣ Deploy to Vercel (Preview / Staging)
       - name: Deploy to Vercel (Staging / Preview)
         if: github.ref_name != 'main'
         working-directory: frontend
@@ -54,7 +47,6 @@ jobs:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
-      # 7️⃣ Deploy to Vercel (Production)
       - name: Deploy to Vercel (Production)
         if: github.ref_name == 'main'
         working-directory: frontend
