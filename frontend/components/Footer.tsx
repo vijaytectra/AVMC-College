@@ -110,7 +110,7 @@ export function Footer() {
                                 <ul className="text-[#F5F5F5] text-sm font-normal font-dm-sans list-disc pl-5 space-y-3">
                                     <li><Link href="#" className="hover:underline">NCW Helpline</Link></li>
                                     <li className="list-item">
-                                        24x7 NCW Women's Helpline, tel: <span className="whitespace-nowrap">7827-170-170</span>
+                                        24x7 NCW Women&apos;s Helpline, tel: <span className="whitespace-nowrap">7827-170-170</span>
                                     </li>
                                     <li><Link href="#" className="hover:underline">Cybercrime Website</Link></li>
                                     <li><Link href="#" className="hover:underline">Handbook on Sexual Harassment of Women at Workplace</Link></li>

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { ChevronRight, ChevronDown, Search } from "lucide-react";
+import { Search } from "lucide-react";
 
 export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -44,7 +44,7 @@ export function Header() {
                         <Link href="#" className="justify-start text-grey-9 text-xs font-medium hover:underline">Mentor mentee program</Link>
                     </div>
                     <div className="hidden xl:flex justify-center items-center gap-2.5">
-                        <Link href="#" className="justify-start text-grey-9 text-xs font-medium hover:underline">Policies & SOP's</Link>
+                        <Link href="#" className="justify-start text-grey-9 text-xs font-medium hover:underline">Policies & SOP&apos;s</Link>
                     </div>
                     <div className="hidden xl:flex justify-center items-center gap-2.5">
                         <Link href="#" className="justify-start text-grey-9 text-xs font-medium hover:underline">Resources</Link>
@@ -238,7 +238,7 @@ export function Header() {
                                 <div className="flex flex-col gap-2.5 p-2.5 w-full max-w-xs mt-4">
                                     <Link href="#" className="flex items-center gap-2.5 text-gray-800 text-sm font-medium font-['DM_Sans']" onClick={toggleMenu}>Career guidance</Link>
                                     <Link href="#" className="flex items-center gap-2.5 text-gray-800 text-sm font-medium font-['DM_Sans']" onClick={toggleMenu}>Mentor mentee program</Link>
-                                    <Link href="#" className="flex items-center gap-2.5 text-gray-800 text-sm font-medium font-['DM_Sans']" onClick={toggleMenu}>Policies & SOP's</Link>
+                                    <Link href="#" className="flex items-center gap-2.5 text-gray-800 text-sm font-medium font-['DM_Sans']" onClick={toggleMenu}>Policies & SOP&apos;s</Link>
                                     <Link href="#" className="flex items-center gap-2.5 text-gray-800 text-sm font-medium font-['DM_Sans']" onClick={toggleMenu}>Resources</Link>
 
                                     <div className="flex justify-between items-center w-full mt-2">
