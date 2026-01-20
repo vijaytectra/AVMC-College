@@ -130,10 +130,10 @@ const AntiRaggingContent: React.FC = () => {
                         <div className="text-p-7 text-xl font-normal font-delight">About the Committee</div>
                     </div>
 
-                    <div className="text-center md:text-left text-grey-8 text-lg font-light font-delight leading-6 tracking-tight">
+                    <div className="text-center md:text-left text-grey-8 text-[18px] font-light font-delight leading-[26px] tracking-[0.01em]">
                         The Anti-Ragging Committee is a statutory body constituted in accordance with the regulations of the National Medical Commission (NMC) and the University Grants Commission (UGC).
                     </div>
-                    <div className="text-center md:text-left text-grey-8 text-lg font-light font-delight leading-6 tracking-tight">
+                    <div className="text-center md:text-left text-grey-8 text-[18px] font-light font-delight leading-[26px] tracking-[0.01em]">
                         The primary objective of this committee is to prevent, prohibit, and eliminate the scourge of ragging in any form within the institution. It is responsible for taking prompt and strict action against those found guilty of ragging, ensuring a fear-free environment for learning and growth. The committee operates with zero tolerance towards ragging and works in coordination with the Anti-Ragging Squad to monitor campus activities efficiently.
                     </div>
                 </div>
@@ -193,7 +193,7 @@ const AntiRaggingContent: React.FC = () => {
                         ].map((text, i) => (
                             <div key={i} className="flex items-start gap-3">
                                 <div className="w-1 h-1 rounded-full bg-black mt-[11px] shrink-0" />
-                                <div className="text-grey-9 text-base font-light font-delight leading-[26px] tracking-[0.32px]">
+                                <div className="text-grey-9 text-[18px] font-light font-delight leading-[26px] tracking-[0.01em]">
                                     {text}
                                 </div>
                             </div>
@@ -234,7 +234,7 @@ const AntiRaggingContent: React.FC = () => {
                                         }`}
                                 >
                                     <div className="p-6 border border-t-0 border-gray-200 bg-white">
-                                        <div className="text-grey-10 text-base font-normal font-delight leading-6 tracking-tight">
+                                        <div className="text-grey-10 text-[18px] font-light font-delight leading-[26px] tracking-[0.01em]">
                                             {term.content}
                                         </div>
                                     </div>

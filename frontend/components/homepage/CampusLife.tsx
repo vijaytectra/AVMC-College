@@ -41,7 +41,7 @@ export function CampusLife() {
                             <div className="flex-1 h-full bg-[#DC292B] relative p-6 flex flex-col justify-between">
                                 <div className="flex justify-between items-start">
                                     <h2 className="text-white text-[64px] font-medium font-delight leading-[60px] tracking-tight">
-                                        Campus<br/>Life
+                                        Campus<br />Life
                                     </h2>
                                     <div className="w-4 h-4 bg-white mt-2" />
                                 </div>

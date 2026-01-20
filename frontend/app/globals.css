@@ -50,6 +50,69 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-extralight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Delight';
+  src: url('/fonts/delight-black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -123,7 +186,8 @@
   --color-s10: #750F10;
   --font-inter: var(--font-inter);
   --font-mounsta: "Mounsta";
-  --font-delight: "Mounsta";
+
+  --font-delight: "Delight";
   --font-dm-sans: "DM_Sans";
   --font-dm-mono: "DM_Mono";
 }
