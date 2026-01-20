@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft } from "lucide-react";
+
 
 /**
  * Recreating the exact design fidelity requested by the user.
