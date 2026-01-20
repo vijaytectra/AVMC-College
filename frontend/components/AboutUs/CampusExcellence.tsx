@@ -24,7 +24,7 @@ export default function CampusExcellence() {
                 </div>
 
                 {/* Content Section: Flex-1 */}
-                <div className="flex-1 self-stretch flex flex-col justify-start items-start gap-8">
+                <div className="flex-1 self-stretch flex flex-col justify-between items-start gap-8">
                     {/* Text Content Wrapper - simulating the h-[503px] distribution */}
                     <div className="flex flex-col gap-12 w-full">
                         {/* Title Group */}
@@ -40,7 +40,7 @@ export default function CampusExcellence() {
                         {/* Description Group */}
                         <div className="self-stretch flex flex-col justify-start items-start gap-8">
                             <p className="text-grey-8/70 text-xs font-light font-delight leading-6 tracking-tight text-justify">
-                                AVMCH's 44-acre green campus delivers world-class medical education through fully equipped Wi-Fi-enabled departments, cutting-edge e-learning library, AHA-certified skills lab, extensive community health centers, 33% lush green cover with solar power sustainability, premium gym/spa facilities, vibrant cafeteria, and a 250-seat state-of-the-art auditorium—celebrating an unparalleled environment for academic excellence, holistic wellness, and societal impact.
+                                AVMCH&apos;s 44-acre green campus delivers world-class medical education through fully equipped Wi-Fi-enabled departments, cutting-edge e-learning library, AHA-certified skills lab, extensive community health centers, 33% lush green cover with solar power sustainability, premium gym/spa facilities, vibrant cafeteria, and a 250-seat state-of-the-art auditorium—celebrating an unparalleled environment for academic excellence, holistic wellness, and societal impact.
                             </p>
                             <p className="text-grey-8/70 text-xs font-light font-delight leading-6 tracking-tight text-justify">
                                 Celebrate innovation and excellence where advanced academic resources converge with vibrant community outreach and pioneering eco-friendly initiatives, empowering future healthcare leaders in a truly inspiring, transformative ecosystem that nurtures dreams into reality.
@@ -49,7 +49,7 @@ export default function CampusExcellence() {
                     </div>
 
                     {/* Explore Button */}
-                    <Link href="#" className="self-stretch h-11 px-5 py-2.5 bg-primary-6 flex justify-center items-center gap-2.5 group hover:bg-primary-7 transition-colors duration-300 mt-8 lg:mt-0">
+                    <Link href="#" className="self-stretch h-11 px-5 py-2.5 bg-p-6 flex justify-center items-center gap-2.5 group hover:bg-primary-7 transition-colors duration-300 mt-8 lg:mt-0">
                         <div className="flex-1 flex justify-between items-center text-grey-1">
                             <span className="text-base font-normal font-delight leading-5 tracking-tight group-hover:pl-2 transition-all">Explore Our Campus</span>
                             <div className="flex items-center gap-2">

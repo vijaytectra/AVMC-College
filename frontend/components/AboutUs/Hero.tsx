@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Hero() {
@@ -23,7 +22,7 @@ export default function Hero() {
                         </span>
                     </h1>
                     <p className="text-lg md:text-xl text-gray-300 max-w-lg leading-relaxed">
-                        Join a premier institution dedicated to shaping compassionate healers and innovative researchers for tomorrow's healthcare challenges.
+                        Join a premier institution dedicated to shaping compassionate healers and innovative researchers for tomorrow&apos;s healthcare challenges.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">

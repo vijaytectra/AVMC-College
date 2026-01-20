@@ -53,9 +53,9 @@ export default function AboutPage() {
 
                                 {/* Quote Block */}
                                 <div className="flex gap-6 items-center">
-                                    <div className="w-2 h-32 lg:h-22 bg-primary-5 shrink-0"></div>
+                                    <div className="w-2 h-32 lg:h-22 bg-p-5 shrink-0"></div>
                                     <div className="w-full max-w-[683px] text-primary-6 text-2xl font-normal font-amelie leading-9 tracking-wide">
-                                        "The encouragement of research and the advancement of individual scholars, who by their excellence will advance medicine and the communities they serve."
+                                        &quot;The encouragement of research and the advancement of individual scholars, who by their excellence will advance medicine and the communities they serve.&quot;
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
 
                                 <div className="self-stretch flex-1 justify-center">
                                     <span className="text-grey-10 text-xl font-bold font-delight leading-8">His answer : </span>
-                                    <span className="text-grey-10 text-xl font-normal font-delight leading-8"> The encouragement of research and the advancement of individual scholars, who by their excellence will advance medicine and the communities they serve. He believed that teaching and research go hand in hand—that success in one depends on success in the other—and that a modern medical college must excel in both while sharing knowledge and discoveries to improve lives.</span>
+                                    <span className="text-grey-10 text-xl font-normal font-delight leading-8"> The encouragement of research and the advancement of individual scholars, who by their excellence will advance medicine and the communities they serve. He believed that teaching and research go hand in <span className="bg-p-2">hand—that success in one depends on success in the other—and that a</span> modern medical college must excel in both while sharing knowledge and discoveries to improve lives.</span>
                                 </div>
 
                                 <div className="self-stretch flex-1 justify-center text-grey-10 text-xl font-light font-delight leading-8">
@@ -89,7 +89,7 @@ export default function AboutPage() {
                                         <div className="flex-1 h-px bg-white/40"></div>
                                     </div>
                                     <p className="text-grey-3/80 text-lg font-[100] font-delight leading-7 text-justify">
-                                        Thirumuruga Kirupananda Variyar Thavathiru Sundara Swamigal Medical Educational and Charitable Trust was founded in 1981 by Dr. A. Shanmugasundaram to serve society's needy. AVMCH opened as the trust's first medical college in 2000 on Pondicherry-Cuddalore Road, initially affiliated with Pondicherry University and later with Vinayaka Mission’s Research Foundation in 2004
+                                        Thirumuruga Kirupananda Variyar Thavathiru Sundara Swamigal Medical Educational and Charitable Trust was founded in 1981 by Dr. A. Shanmugasundaram to serve society&apos;s needy. AVMCH opened as the trust&apos;s first medical college in 2000 on Pondicherry-Cuddalore Road, initially affiliated with Pondicherry University and later with Vinayaka Mission&rsquo;s Research Foundation in 2004
                                     </p>
                                 </div>
                             </div>

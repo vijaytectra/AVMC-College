@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+
 import Link from "next/link";
-import { ChevronLeft, ChevronDown, Upload } from "lucide-react";
+import { ChevronDown, Upload } from "lucide-react";
 
 /**
  * ApplyJobContent Component

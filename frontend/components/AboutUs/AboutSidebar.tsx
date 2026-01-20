@@ -13,8 +13,8 @@ export default function AboutSidebar() {
     return (
         <div className="w-full bg-white inline-flex flex-col justify-start items-start gap-4 rounded-lg p-6 shadow-sm border border-grey-2">
             {/* Active Item: About */}
-            <div className="self-stretch p-4 bg-primary-1/30 border-l-4 border-primary-6 inline-flex justify-start items-center gap-2.5">
-                <div className="justify-center text-primary-6 text-base font-normal font-delight leading-6">About</div>
+            <div className="self-stretch p-4 bg-p-1 border-l-4 border-p-6 inline-flex justify-start items-center gap-2.5">
+                <div className="justify-center text-p-6 text-base font-normal font-delight leading-6">About</div>
             </div>
 
             {/* Vision & Mission Values - wrap text allowed */}
