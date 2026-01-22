@@ -36,7 +36,7 @@ const JobDetailsContent: React.FC<JobDetailsProps> = ({
             <div className="w-full max-w-[1038px] bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.04)] p-8 flex flex-col gap-11">
 
                 {/* Header Section */}
-                <div className="w-full flex justify-between items-start gap-8">
+                <div className="w-full flex flex-col md:flex-row justify-between items-start gap-4 md:gap-8">
                     <div className="flex flex-col gap-8 flex-1">
                         {/* Breadcrumb */}
                         <div className="text-grey-6 text-sm font-normal font-delight">
