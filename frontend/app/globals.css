@@ -113,6 +113,21 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'GC Amelie Promised Demo';
+  src: url('/fonts/gc-amelie-promised-demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GC Amelie Promised Demo';
+  src: url('/fonts/gc-amelie-promised-demo-italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -186,6 +201,7 @@
   --color-s10: #750F10;
   --font-inter: var(--font-inter);
   --font-mounsta: "Mounsta";
+  --font-gc-amelie: "GC Amelie Promised Demo";
 
   --font-delight: "Delight";
   --font-dm-sans: "DM_Sans";

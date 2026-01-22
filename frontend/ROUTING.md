@@ -10,6 +10,7 @@ This document outlines the available routes in the AVMC Frontend application and
 | **Anti-Ragging** | [`/anti-ragging`](http://localhost:3000/anti-ragging) | Information about the Anti-Ragging Committee, regulations, and reporting. |
 | **Career Details** | [`/career-details`](http://localhost:3000/career-details) | Detailed view of a specific job opening (e.g., Staff Nurse). |
 | **Apply Job** | [`/apply-job`](http://localhost:3000/apply-job) | Application form for applying to a job position. |
+| **Careers** | [`/careers`](http://localhost:3000/careers) | Main careers page featuring the hero section. |
 
 ## How to Access
 
@@ -32,4 +33,5 @@ This document outlines the available routes in the AVMC Frontend application and
     -   `app/anti-ragging/page.tsx` -> `/anti-ragging`
     -   `app/career-details/page.tsx` -> `/career-details`
     -   `app/apply-job/page.tsx` -> `/apply-job`
+    -   `app/careers/page.tsx` -> `/careers`
 -   **Components**: Reusable UI components for these pages are located in `components/`.
