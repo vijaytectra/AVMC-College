@@ -346,12 +346,12 @@ export default function InternationalEngagementsPage() {
                 ref={engagementsRef}
             >
                 <div className="w-full flex flex-col items-center gap-10">
-                    <div className="w-full px-4 md:px-[100px] flex flex-col items-center gap-5">
+                    <div className="w-full px-4 md:px-12 lg:px-[100px] flex flex-col items-center gap-5">
                         {/* Header Card - Matching OpenPositions Style */}
                         <div className="w-full h-auto md:h-52 relative bg-p-7 rounded-xl overflow-hidden flex flex-col md:block p-6 md:p-0">
                             {/* Content Group */}
-                            <div className="relative md:absolute md:w-[648px] md:left-[100px] md:top-1/2 md:-translate-y-1/2 flex flex-col justify-start items-start gap-6 z-10">
-                                <div className="self-stretch justify-start text-p-1 text-3xl md:text-4xl font-normal font-gc-amelie italic leading-[40px] md:leading-[56px] mt-3">All International Engagements</div>
+                            <div className="relative md:absolute md:w-[600px] lg:w-[648px] md:left-12 lg:left-[100px] md:top-1/2 md:-translate-y-1/2 flex flex-col justify-start items-start gap-6 z-10 p-4 md:p-0">
+                                <div className="self-stretch justify-start text-p-1 text-3xl md:text-3xl lg:text-4xl font-normal font-gc-amelie italic leading-[40px] md:leading-[56px] mt-0 md:mt-3">All International Engagements</div>
                                 <div className="self-stretch flex flex-col justify-start items-start gap-3">
                                     {/* Search Bar */}
                                     <div className="self-stretch bg-white inline-flex justify-start items-center p-0.5 ">
@@ -540,11 +540,11 @@ export default function InternationalEngagementsPage() {
                         />
 
                         {/* Content Container */}
-                        <div className="relative z-10 w-full h-full flex flex-col md:flex-row justify-between items-stretch py-10 px-6 md:px-[80px] gap-20">
+                        <div className="relative z-10 w-full h-full flex flex-col md:flex-row justify-between items-stretch py-10 px-6 md:px-12 lg:px-[80px] gap-10 md:gap-14 lg:gap-20">
                             {/* Section 1: Contact */}
                             <div className="flex flex-col justify-center gap-11 w-full flex-1">
                                 <div className="flex flex-col gap-5">
-                                    <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px] whitespace-nowrap">Contact International Affairs</h3>
+                                    <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px] whitespace-normal lg:whitespace-nowrap">Contact International Affairs</h3>
                                     <p className="text-grey-7/60 text-sm font-['Delight'] tracking-[0.56px]">Reach out to our international affairs office for partnership inquiries.</p>
                                 </div>
                                 <div className="w-fit px-5 py-2.5 outline outline-1 outline-p-7 flex justify-center items-center cursor-pointer hover:bg-p-7 hover:text-white transition-colors">
@@ -555,7 +555,7 @@ export default function InternationalEngagementsPage() {
                             {/* Section 2: Explore */}
                             <div className="flex flex-col justify-center gap-11 w-full flex-1">
                                 <div className="flex flex-col gap-5">
-                                    <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px] whitespace-nowrap">Explore Research Collaborations</h3>
+                                    <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px] whitespace-normal lg:whitespace-nowrap">Explore Research Collaborations</h3>
                                     <p className="text-grey-7/60 text-sm font-['Delight'] tracking-[0.56px]">Discover ongoing research projects open for international collaboration.</p>
                                 </div>
                                 <div className="w-fit px-5 py-2.5 outline outline-1 outline-p-7 flex justify-center items-center cursor-pointer hover:bg-p-7 hover:text-white transition-colors">
