@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, ChevronDown, ChevronLeft, ChevronRight, Calendar, MapPin } from "lucide-react";
@@ -15,7 +15,8 @@ export default function InternationalEngagementsPage() {
             partner: "WHO",
             attendees: "150+ Attendees",
             duration: "3 Days",
-            image: "/images/cancerfree.png"
+            image: "/images/cancerfree.png",
+            slug: "cancerfree-biotech-delegation-collaboration"
         },
         {
             type: "Symposium",
@@ -25,7 +26,8 @@ export default function InternationalEngagementsPage() {
             partner: "Medical Board",
             attendees: "200+ Attendees",
             duration: "2 Days",
-            image: "/images/cancerfree2.png"
+            image: "/images/cancerfree2.png",
+            slug: "international-medical-research-symposium-2024"
         },
         {
             type: "Delegation",
@@ -35,7 +37,8 @@ export default function InternationalEngagementsPage() {
             partner: "Health Ministry",
             attendees: "50+ Delegates",
             duration: "5 Days",
-            image: "/images/cancerfree3.png"
+            image: "/images/cancerfree3.png",
+            slug: "global-health-summit-participation"
         },
         {
             type: "Exchange",
@@ -45,7 +48,8 @@ export default function InternationalEngagementsPage() {
             partner: "Cambridge Univ",
             attendees: "12 Students",
             duration: "4 Weeks",
-            image: "/images/cancerfree4.png"
+            image: "/images/cancerfree4.png",
+            slug: "student-exchange-program"
         },
         {
             type: "Conference",
@@ -55,7 +59,8 @@ export default function InternationalEngagementsPage() {
             partner: "Research Inst.",
             attendees: "300+ Attendees",
             duration: "4 Days",
-            image: "/images/cancerfree.png"
+            image: "/images/cancerfree.png",
+            slug: "tropical-diseases-research-conference"
         },
         {
             type: "Workshop",
@@ -65,7 +70,8 @@ export default function InternationalEngagementsPage() {
             partner: "Tokyo Med",
             attendees: "40 Surgeons",
             duration: "3 Days",
-            image: "/images/cancerfree2.png"
+            image: "/images/cancerfree2.png",
+            slug: "advanced-surgical-techniques-workshop"
         },
         {
             type: "Delegation",
@@ -75,18 +81,50 @@ export default function InternationalEngagementsPage() {
             partner: "NUH",
             attendees: "20 Delegates",
             duration: "2 Days",
-            image: "/images/cancerfree3.png"
+            image: "/images/cancerfree3.png",
+            slug: "asian-medical-delegation-visit"
         }
     ];
 
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchQuery, setSearchQuery] = useState("");
+
+    const [selectedYear, setSelectedYear] = useState("All Year");
+    const [selectedType, setSelectedType] = useState("All Type");
+    const [selectedCountry, setSelectedCountry] = useState("All Country");
+
+    const engagementsRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLDivElement>(null);
     const itemsPerPage = 6;
-    const totalPages = Math.ceil(engagements.length / itemsPerPage);
-    const currentEngagements = engagements.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+
+    const uniqueYears = ["All Year", ...Array.from(new Set(engagements.map(e => e.date.split(', ')[1])))];
+    const uniqueTypes = ["All Type", ...Array.from(new Set(engagements.map(e => e.type)))];
+    const uniqueCountries = ["All Country", ...Array.from(new Set(engagements.map(e => e.location)))];
+
+    const filteredEngagements = engagements.filter(engagement => {
+        const matchesSearch =
+            engagement.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            engagement.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            engagement.type.toLowerCase().includes(searchQuery.toLowerCase());
+
+        const matchesYear = selectedYear === "All Year" || engagement.date.includes(selectedYear);
+        const matchesType = selectedType === "All Type" || engagement.type === selectedType;
+        const matchesCountry = selectedCountry === "All Country" || engagement.location === selectedCountry;
+
+        return matchesSearch && matchesYear && matchesType && matchesCountry;
+    });
+
+    const totalPages = Math.ceil(filteredEngagements.length / itemsPerPage);
+    const currentEngagements = filteredEngagements.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
+        if (engagementsRef.current) {
+            engagementsRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
     };
+
+
 
     return (
         <div className="w-full relative flex flex-col bg-white min-h-screen font-['Delight']">
@@ -99,31 +137,34 @@ export default function InternationalEngagementsPage() {
                         alt="Hero Background"
                         fill
                     />
-                    <div className="absolute inset-0 bg-slate-300 opacity-20" />
+                    <div className="absolute inset-0 bg-slate-300 opacity-0" />
                     {/* Hero Content Overlay */}
-                    <div className="absolute inset-0 flex justify-center items-center">
-                        <div className="w-[709px] h-56 bg-white/10 backdrop-blur-[20px] border-l-[11px] border-s6 relative">
-                            <div className="absolute left-[58.50px] top-[36px] inline-flex flex-col justify-start items-center gap-8">
-                                <div className="self-stretch text-center justify-center text-p-8 text-5xl font-normal font-['GC_Amelie_Promised_Demo'] italic">
+                    <div className="absolute inset-0 flex justify-center items-center px-4">
+                        <div className="w-full max-w-[709px] min-h-[231px] border-l-[11px] border-l-[#DC292B] border-y border-white/40 bg-white/10 backdrop-blur-md relative flex flex-col justify-start items-center pt-9 gap-8">
+                            <div className="w-full flex flex-col items-center gap-2">
+                                <div className="text-center text-p-8 text-[48px] font-normal font-['GC_Amelie_Promised_Demo'] italic leading-tight">
                                     International Engagements
                                 </div>
-                                <div className="self-stretch text-center justify-center text-Grey-9 text-sm font-normal font-['Delight'] uppercase tracking-wide">
-                                    home &gt; About &gt; International Engagements
+                                <div className="text-center text-Grey-9 text-sm font-normal font-['Delight'] uppercase tracking-[0.84px]">
+                                    <Link href="/" className="hover:underline">home</Link> &gt; <Link href="/about" className="hover:underline">About</Link> &gt; International Engagements
                                 </div>
-                                <div className="h-12 inline-flex justify-center items-center gap-7">
-                                    <div className="w-80 h-12 px-5 py-2.5 bg-p-7 flex justify-center items-center gap-2.5 cursor-pointer hover:opacity-90">
-                                        <div className="flex justify-start items-center gap-60">
-                                            <div className="justify-center text-grey-1 text-base font-normal font-['Delight'] leading-5 tracking-tight">
-                                                Explore Partnerships
-                                            </div>
-                                        </div>
+                            </div>
+
+                            <div className="flex flex-col md:flex-row justify-center items-center gap-7">
+                                <div
+                                    className="w-full md:w-[317px] h-12 bg-p-7 flex justify-center items-center gap-2.5 cursor-pointer hover:opacity-90"
+                                    onClick={() => engagementsRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                                >
+                                    <div className="text-grey-1 text-base font-normal font-['Delight'] tracking-[0.32px]">
+                                        Explore Partnerships
                                     </div>
-                                    <div className="h-12 px-5 py-2.5 outline outline-[0.50px] outline-offset-[-0.50px] outline-p-8 flex justify-center items-center gap-2.5 cursor-pointer hover:bg-p-8 hover:text-white transition-colors">
-                                        <div className="flex justify-start items-center gap-60">
-                                            <div className="justify-center text-base font-normal font-['Delight'] leading-5 tracking-tight">
-                                                Contact International Office
-                                            </div>
-                                        </div>
+                                </div>
+                                <div
+                                    className="w-full md:w-auto h-12 px-5 outline outline-[0.50px] outline-offset-[-0.50px] outline-p-8 flex justify-center items-center gap-2.5 cursor-pointer hover:bg-p-8 hover:text-white transition-colors group"
+                                    onClick={() => contactRef.current?.scrollIntoView({ behavior: 'smooth' })}
+                                >
+                                    <div className="text-p-8 group-hover:text-white text-base font-normal font-['Delight'] tracking-[0.32px] whitespace-nowrap">
+                                        Contact International Office
                                     </div>
                                 </div>
                             </div>
@@ -133,57 +174,57 @@ export default function InternationalEngagementsPage() {
             </div>
 
             {/* Main Content Container with Side Padding */}
-            <div className="w-full px-[150px] pb-32">
+            <div className="w-full px-4 md:px-16 lg:px-[150px] pb-24">
                 {/* Stats Section */}
-                <div className="flex justify-center items-start gap-14 mt-16">
-                    <div className="flex flex-col justify-start items-center gap-9">
+                <div className="grid grid-cols-2 lg:flex lg:justify-center items-start gap-8 lg:gap-14 mt-16">
+                    <div className="flex flex-col justify-start items-center gap-4 lg:gap-9">
                         <div className="w-14 h-14 p-2.5 bg-p-2 inline-flex justify-center items-center gap-2.5">
                             <Image src="/icons/active collaborations icons.svg" alt="Active Collaborations" width={32} height={32} className="w-8 h-8" />
                         </div>
-                        <div className="flex flex-col justify-start items-center gap-4">
-                            <div className="text-center justify-center text-p-7 text-3xl font-medium font-['Delight'] uppercase tracking-widest">
+                        <div className="flex flex-col justify-start items-center gap-2 lg:gap-4">
+                            <div className="text-center justify-center text-p-7 text-2xl lg:text-3xl font-medium font-['Delight'] uppercase tracking-widest">
                                 45+
                             </div>
-                            <div className="text-center justify-center text-grey-7 text-sm font-normal font-['Delight'] tracking-wide whitespace-nowrap">
+                            <div className="text-center justify-center text-grey-7/60 text-xs lg:text-sm font-normal font-['Delight'] tracking-wide">
                                 Active Collaborations
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-start items-center gap-9">
+                    <div className="flex flex-col justify-start items-center gap-4 lg:gap-9">
                         <div className="w-14 h-14 p-2.5 bg-p-2 inline-flex justify-center items-center gap-2.5">
                             <Image src="/icons/years of engagement icon.svg" alt="Years of Engagement" width={32} height={32} className="w-8 h-8" />
                         </div>
-                        <div className="flex flex-col justify-start items-center gap-4">
-                            <div className="text-center justify-center text-p-7 text-3xl font-medium font-['Delight'] uppercase tracking-widest">
+                        <div className="flex flex-col justify-start items-center gap-2 lg:gap-4">
+                            <div className="text-center justify-center text-p-7 text-2xl lg:text-3xl font-medium font-['Delight'] uppercase tracking-widest">
                                 15+
                             </div>
-                            <div className="text-center justify-center text-grey-7 text-sm font-normal font-['Delight'] tracking-wide whitespace-nowrap">
+                            <div className="text-center justify-center text-grey-7/60 text-xs lg:text-sm font-normal font-['Delight'] tracking-wide">
                                 Years of Engagement
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-start items-center gap-9">
+                    <div className="flex flex-col justify-start items-center gap-4 lg:gap-9">
                         <div className="w-14 h-14 p-2.5 bg-p-2 inline-flex justify-center items-center gap-2.5">
                             <Image src="/icons/conference attended.svg" alt="Conferences Attended" width={32} height={32} className="w-8 h-8" />
                         </div>
-                        <div className="flex flex-col justify-start items-center gap-4">
-                            <div className="text-center justify-center text-p-7 text-3xl font-medium font-['Delight'] uppercase tracking-widest">
+                        <div className="flex flex-col justify-start items-center gap-2 lg:gap-4">
+                            <div className="text-center justify-center text-p-7 text-2xl lg:text-3xl font-medium font-['Delight'] uppercase tracking-widest">
                                 120+
                             </div>
-                            <div className="text-center justify-center text-grey-7 text-sm font-normal font-['Delight'] tracking-wide whitespace-nowrap">
+                            <div className="text-center justify-center text-grey-7/60 text-xs lg:text-sm font-normal font-['Delight'] tracking-wide">
                                 Conferences Attended
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-start items-center gap-9">
+                    <div className="flex flex-col justify-start items-center gap-4 lg:gap-9">
                         <div className="w-14 h-14 p-2.5 bg-p-2 inline-flex justify-center items-center gap-2.5">
                             <Image src="/icons/partner countries.svg" alt="Partner Countries" width={32} height={32} className="w-8 h-8" />
                         </div>
-                        <div className="flex flex-col justify-start items-center gap-4">
-                            <div className="text-center justify-center text-p-7 text-3xl font-medium font-['Delight'] uppercase tracking-widest">
+                        <div className="flex flex-col justify-start items-center gap-2 lg:gap-4">
+                            <div className="text-center justify-center text-p-7 text-2xl lg:text-3xl font-medium font-['Delight'] uppercase tracking-widest">
                                 28
                             </div>
-                            <div className="text-center justify-center text-grey-7 text-sm font-normal font-['Delight'] tracking-wide whitespace-nowrap">
+                            <div className="text-center justify-center text-grey-7/60 text-xs lg:text-sm font-normal font-['Delight'] tracking-wide">
                                 Partner Countries
                             </div>
                         </div>
@@ -192,23 +233,23 @@ export default function InternationalEngagementsPage() {
 
                 {/* Highlights Section */}
                 <div className="w-full flex flex-col items-center gap-6 mt-20">
-                    <div className="text-center justify-center text-Grey-5 text-sm font-normal font-['Delight'] tracking-widest">
+                    <div className="text-center justify-center text-grey-7/50 text-sm font-normal font-['Delight'] tracking-[0.17em]">
                         Highlights
                     </div>
-                    <div className="flex flex-col justify-start items-center gap-6 max-w-[601px]">
-                        <div className="text-center justify-center text-p-7 text-4xl font-normal font-['GC_Amelie_Promised_Demo'] italic">
+                    <div className="flex flex-col justify-start items-center gap-0 max-w-[601px]">
+                        <div className="text-center justify-center text-p-7 text-[40px] font-normal font-['GC_Amelie_Promised_Demo'] italic">
                             Featured International Engagements
                         </div>
-                        <div className="self-stretch text-center justify-center text-grey-7 text-sm font-normal font-['Delight'] tracking-wide">
-                            Explore our most impactful recent collaborations that are shaping the future of medical education and healthcare innovation.
+                        <div className="self-stretch text-center justify-center text-grey-7/60 text-sm font-normal font-['Delight'] tracking-wide">
+                            Explore our most impactful recent collaborations that are shaping the future of <br />medical education and healthcare innovation.
                         </div>
                     </div>
                 </div>
 
                 {/* Featured Cards Row */}
-                <div className="flex justify-between items-start mt-16 gap-8">
+                <div className="flex flex-col lg:flex-row justify-between items-start mt-16 gap-8 w-full">
                     {/* Card 1 */}
-                    <div className="w-[511px] bg-white inline-flex flex-col justify-start items-start shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-full lg:flex-1 bg-white inline-flex flex-col justify-start items-start shadow-sm hover:shadow-md transition-shadow">
                         <div className="self-stretch h-64 relative overflow-hidden group">
                             <Image
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -252,7 +293,7 @@ export default function InternationalEngagementsPage() {
                     </div>
 
                     {/* Card 2 */}
-                    <div className="w-[511px] bg-white inline-flex flex-col justify-start items-start shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-full lg:flex-1 bg-white inline-flex flex-col justify-start items-start shadow-sm hover:shadow-md transition-shadow">
                         <div className="self-stretch h-64 relative overflow-hidden group">
                             <Image
                                 className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -296,14 +337,21 @@ export default function InternationalEngagementsPage() {
                     </div>
                 </div>
 
-                {/* All Engagements Section */}
-                <div className="w-full mt-24 flex flex-col items-center gap-10">
-                    <div className="w-full flex flex-col items-center gap-5">
+            </div>
+
+            {/* All Engagements Section */}
+            <div
+                className="w-full flex flex-col items-center gap-10 py-[70px] bg-cover bg-top min-h-[800px]"
+                style={{ backgroundImage: 'url("/images/paper bg for car.png")' }}
+                ref={engagementsRef}
+            >
+                <div className="w-full flex flex-col items-center gap-10">
+                    <div className="w-full px-4 md:px-[100px] flex flex-col items-center gap-5">
                         {/* Header Card - Matching OpenPositions Style */}
-                        <div className="w-full max-w-[1241px] h-auto md:h-52 relative bg-p-7 rounded-xl overflow-hidden flex flex-col md:block p-6 md:p-0">
+                        <div className="w-full h-auto md:h-52 relative bg-p-7 rounded-xl overflow-hidden flex flex-col md:block p-6 md:p-0">
                             {/* Content Group */}
                             <div className="relative md:absolute md:w-[648px] md:left-[100px] md:top-1/2 md:-translate-y-1/2 flex flex-col justify-start items-start gap-6 z-10">
-                                <div className="self-stretch justify-start text-p-1 text-4xl font-normal font-gc-amelie italic leading-[56px] mt-3">All International Engagements</div>
+                                <div className="self-stretch justify-start text-p-1 text-3xl md:text-4xl font-normal font-gc-amelie italic leading-[40px] md:leading-[56px] mt-3">All International Engagements</div>
                                 <div className="self-stretch flex flex-col justify-start items-start gap-3">
                                     {/* Search Bar */}
                                     <div className="self-stretch bg-white inline-flex justify-start items-center p-0.5 ">
@@ -315,18 +363,67 @@ export default function InternationalEngagementsPage() {
                                         <input
                                             type="text"
                                             placeholder="Search Engagements..."
+                                            value={searchQuery}
+                                            onChange={(e) => {
+                                                setSearchQuery(e.target.value);
+                                                setCurrentPage(1);
+                                            }}
                                             className="w-52 justify-start text-grey-8 text-sm font-light font-delight leading-5 tracking-wide outline-none placeholder:text-grey-8 bg-transparent"
                                         />
                                     </div>
                                     {/* Filters */}
                                     <div className="flex flex-col justify-start items-end gap-6">
                                         <div className="self-stretch inline-flex flex-wrap justify-start items-center gap-6">
-                                            {['Year', 'Country', 'Type'].map((filter) => (
-                                                <div key={filter} className="h-8 px-5 py-[5px] bg-p-7 outline outline-[0.50px] outline-offset-[-0.50px] outline-p-4 flex justify-center items-center gap-2.5 cursor-pointer hover:bg-p-6 transition-colors">
-                                                    <div className="text-center justify-start text-grey-4 text-base font-normal font-dm-sans leading-5">{filter}</div>
-                                                    <ChevronDown size={16} className="text-grey-1" />
-                                                </div>
-                                            ))}
+                                            {/* Year Filter */}
+                                            <div className="relative group">
+                                                <select
+                                                    value={selectedYear}
+                                                    onChange={(e) => {
+                                                        setSelectedYear(e.target.value);
+                                                        setCurrentPage(1);
+                                                    }}
+                                                    className="h-8 pl-5 pr-10 py-[5px] bg-p-7 outline outline-[0.50px] outline-offset-[-0.50px] outline-p-4 text-grey-4 text-base font-normal font-dm-sans appearance-none cursor-pointer hover:bg-p-6 transition-colors rounded-none"
+                                                >
+                                                    {uniqueYears.map(year => (
+                                                        <option key={year} value={year} className="bg-white text-black">{year}</option>
+                                                    ))}
+                                                </select>
+                                                <ChevronDown size={16} className="text-grey-1 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                                            </div>
+
+                                            {/* Country Filter Filter */}
+                                            <div className="relative group">
+                                                <select
+                                                    value={selectedCountry}
+                                                    onChange={(e) => {
+                                                        setSelectedCountry(e.target.value);
+                                                        setCurrentPage(1);
+                                                    }}
+                                                    className="h-8 pl-5 pr-10 py-[5px] bg-p-7 outline outline-[0.50px] outline-offset-[-0.50px] outline-p-4 text-grey-4 text-base font-normal font-dm-sans appearance-none cursor-pointer hover:bg-p-6 transition-colors rounded-none"
+                                                >
+                                                    {uniqueCountries.map(country => (
+                                                        <option key={country} value={country} className="bg-white text-black">{country}</option>
+                                                    ))}
+                                                </select>
+                                                <ChevronDown size={16} className="text-grey-1 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                                            </div>
+
+                                            {/* Type Filter */}
+                                            <div className="relative group">
+                                                <select
+                                                    value={selectedType}
+                                                    onChange={(e) => {
+                                                        setSelectedType(e.target.value);
+                                                        setCurrentPage(1);
+                                                    }}
+                                                    className="h-8 pl-5 pr-10 py-[5px] bg-p-7 outline outline-[0.50px] outline-offset-[-0.50px] outline-p-4 text-grey-4 text-base font-normal font-dm-sans appearance-none cursor-pointer hover:bg-p-6 transition-colors rounded-none"
+                                                >
+                                                    {uniqueTypes.map(type => (
+                                                        <option key={type} value={type} className="bg-white text-black">{type}</option>
+                                                    ))}
+                                                </select>
+                                                <ChevronDown size={16} className="text-grey-1 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -345,118 +442,122 @@ export default function InternationalEngagementsPage() {
                         </div>
                     </div>
 
-                    <div className="w-full max-w-[1241px]">
-                        <div className="mb-6">
-                            <div className="text-grey-8 text-sm font-delight font-light tracking-[0.56px]">
-                                Showing {engagements.length} engagements
-                            </div>
-                        </div>
-
-                        {/* List Items (Grid/Stack) */}
-                        <div className="flex flex-col gap-6 w-full items-center">
-                            {currentEngagements.map((item, index) => (
-                                <div key={index} className="w-[1040px] bg-white flex flex-row items-start relative shadow-sm hover:shadow-md transition-shadow">
-                                    <div className="w-[350px] h-[250px] relative overflow-hidden flex-shrink-0">
-                                        <Image className="object-cover" src={item.image} alt="placeholder" fill />
-                                    </div>
-                                    <div className="flex-1 p-6 h-[250px] flex flex-col justify-between">
-                                        <div className="flex flex-col gap-6">
-                                            <div className="flex justify-between items-center w-full">
-                                                <div className="flex items-center gap-1">
-                                                    <Calendar className="w-4 h-4 text-grey-8" />
-                                                    <div className="text-Grey-8 text-xs font-normal font-['Delight'] tracking-[0.72px]">{item.date}</div>
-                                                </div>
-                                                <div className="flex items-center gap-1">
-                                                    <MapPin className="w-4 h-4 text-grey-8" />
-                                                    <div className="text-Grey-8 text-xs font-normal font-['Delight'] tracking-[0.72px]">{item.location}</div>
-                                                </div>
-                                            </div>
-                                            <div className="flex flex-col gap-1">
-                                                <h3 className="text-Grey-9 text-base font-normal font-['Delight'] leading-6 tracking-[0.96px]">
-                                                    {item.title}
-                                                </h3>
-                                                <p className="text-grey-7 text-sm font-normal font-['Delight'] leading-6 tracking-[0.84px]">
-                                                    AVMC faculty presented groundbreaking research on tropical diseases at this prestigious international symposium in Geneva.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="flex justify-between items-center w-full">
-                                            <span className="text-p-7 text-sm font-normal font-['Delight'] tracking-[0.84px]">View Details</span>
-                                            <div className="w-5 h-5 bg-[#D9D9D9]" />
-                                        </div>
-                                    </div>
-                                    <div className="absolute top-[18px] left-[22px] bg-[#F9F6EE] px-2.5 py-1 flex justify-center items-center">
-                                        <span className="text-p-6 text-xs font-medium font-['Delight'] tracking-[0.72px]">{item.type}</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Pagination */}
-                        {engagements.length > itemsPerPage && (
-                            <div className="w-full flex justify-center items-center gap-2 mt-6">
-                                <button
-                                    onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
-                                    disabled={currentPage === 1}
-                                    className={`w-8 h-8 relative outline outline-1 outline-offset-[-1px] flex justify-center items-center transition-colors ${currentPage === 1 ? 'bg-grey-4 outline-grey-3 cursor-not-allowed' : 'bg-white outline-zinc-200 hover:bg-gray-50'}`}
-                                >
-                                    <ChevronLeft size={16} className={currentPage === 1 ? 'text-grey-6' : 'text-grey-8'} />
-                                </button>
-
-                                {Array.from({ length: totalPages }).map((_, i) => (
-                                    <button
-                                        key={i}
-                                        onClick={() => handlePageChange(i + 1)}
-                                        className={`w-8 h-8 relative rounded outline outline-1 outline-offset-[-1px] flex justify-center items-center overflow-hidden transition-colors ${currentPage === i + 1 ? 'bg-white outline-p-7' : 'bg-white outline-grey-4 hover:bg-gray-50'}`}
-                                    >
-                                        <span className={`text-sm leading-5 ${currentPage === i + 1 ? 'text-p-7 font-bold' : 'text-grey-8 font-normal font-delight'}`}>
-                                            {i + 1}
-                                        </span>
-                                    </button>
-                                ))}
-
-                                <button
-                                    onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
-                                    disabled={currentPage === totalPages}
-                                    className={`w-8 h-8 relative outline outline-1 outline-offset-[-1px] flex justify-center items-center transition-colors ${currentPage === totalPages ? 'bg-grey-4 outline-grey-3 cursor-not-allowed' : 'bg-white outline-zinc-200 hover:bg-gray-50'}`}
-                                >
-                                    <ChevronRight size={16} className={currentPage === totalPages ? 'text-grey-6' : 'text-grey-8'} />
-                                </button>
-                            </div>
-                        )}
-                    </div>
                 </div>
 
-                {/* Contact/CTA Section (Matching CareerCTA Style) */}
-                <div className="w-full flex justify-center mt-32">
-                    <div className="relative w-full max-w-[1040px] h-auto min-h-[231px]">
+                <div className="w-full max-w-[1241px] px-4 md:px-16 lg:px-[150px]">
+                    <div className="mb-6">
+                        <div className="text-grey-8 text-sm font-delight font-light tracking-[0.56px]">
+                            Showing {filteredEngagements.length} engagements
+                        </div>
+                    </div>
+
+                    {/* List Items (Grid/Stack) */}
+                    <div className="flex flex-col gap-6 w-full items-center">
+                        {currentEngagements.map((item, index) => (
+                            <div key={index} className="w-full max-w-[1040px] bg-white flex flex-col md:flex-row items-start relative shadow-sm hover:shadow-md transition-shadow">
+                                <div className="w-full md:w-[350px] h-48 md:h-[250px] relative overflow-hidden flex-shrink-0">
+                                    <Image className="object-cover" src={item.image} alt="placeholder" fill />
+                                </div>
+                                <div className="flex-1 p-6 h-auto md:h-[250px] flex flex-col justify-between w-full">
+                                    <div className="flex flex-col gap-6">
+                                        <div className="flex justify-between items-center w-full">
+                                            <div className="flex items-center gap-1">
+                                                <Calendar className="w-4 h-4 text-grey-7/60" />
+                                                <div className="text-grey-7/80 text-xs font-normal font-['Delight'] tracking-[0.72px]">{item.date}</div>
+                                            </div>
+                                            <div className="flex items-center gap-1">
+                                                <MapPin className="w-4 h-4 text-grey-7/60" />
+                                                <div className="text-grey-7 text-xs font-normal font-['Delight'] tracking-[0.72px]">{item.location}</div>
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-1">
+                                            <h3 className="text-grey-9 text-base font-normal font-['Delight'] leading-6 tracking-[0.96px]">
+                                                {item.title}
+                                            </h3>
+                                            <p className="text-grey-7/60 text-sm font-normal font-['Delight'] leading-6 tracking-[0.84px]">
+                                                AVMC faculty presented groundbreaking research on tropical diseases at this prestigious international symposium in Geneva.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <Link href={`/about/international-engagements/${item.slug}`} className="flex justify-between items-center w-full mt-4 md:mt-0 cursor-pointer hover:opacity-70 transition-opacity">
+                                        <span className="text-p-7 text-sm font-normal font-['Delight'] tracking-[0.84px]">View Details</span>
+                                        <Image src="/images/arrow_forward view details.svg" alt="Arrow" width={20} height={20} />
+                                    </Link>
+                                </div>
+                                <div className="absolute top-[18px] left-[22px] bg-[#F9F6EE] px-2.5 py-1 flex justify-center items-center">
+                                    <span className="text-p-6 text-xs font-medium font-['Delight'] tracking-[0.72px]">{item.type}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Pagination */}
+                    {filteredEngagements.length > itemsPerPage && (
+                        <div className="w-full flex justify-center items-center gap-2 mt-6">
+                            <button
+                                onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
+                                disabled={currentPage === 1}
+                                className={`w-8 h-8 relative outline outline-1 outline-offset-[-1px] flex justify-center items-center transition-colors ${currentPage === 1 ? 'bg-grey-4 outline-grey-3 cursor-not-allowed' : 'bg-white outline-zinc-200 hover:bg-gray-50'}`}
+                            >
+                                <ChevronLeft size={16} className={currentPage === 1 ? 'text-grey-6' : 'text-grey-8'} />
+                            </button>
+
+                            {Array.from({ length: totalPages }).map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => handlePageChange(i + 1)}
+                                    className={`w-8 h-8 relative rounded outline outline-1 outline-offset-[-1px] flex justify-center items-center overflow-hidden transition-colors ${currentPage === i + 1 ? 'bg-white outline-p-7' : 'bg-white outline-grey-4 hover:bg-gray-50'}`}
+                                >
+                                    <span className={`text-sm leading-5 ${currentPage === i + 1 ? 'text-p-7 font-bold' : 'text-grey-8 font-normal font-delight'}`}>
+                                        {i + 1}
+                                    </span>
+                                </button>
+                            ))}
+
+                            <button
+                                onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
+                                disabled={currentPage === totalPages}
+                                className={`w-8 h-8 relative outline outline-1 outline-offset-[-1px] flex justify-center items-center transition-colors ${currentPage === totalPages ? 'bg-grey-4 outline-grey-3 cursor-not-allowed' : 'bg-white outline-zinc-200 hover:bg-gray-50'}`}
+                            >
+                                <ChevronRight size={16} className={currentPage === totalPages ? 'text-grey-6' : 'text-grey-8'} />
+                            </button>
+                        </div>
+                    )}
+                </div>
+            </div>
+
+            {/* Contact/CTA Section (Matching CareerCTA Style) */}
+            <div className="w-full px-4 md:px-16 lg:px-[150px] pb-32 pt-24" ref={contactRef}>
+                <div className="w-full flex justify-center">
+                    <div className="relative w-full max-w-[1040px] h-auto min-h-[363px]">
                         {/* Back Border (Offset) */}
                         <div
                             className="absolute inset-0 translate-y-[14px] -translate-x-[14px] border-2 border-p-5 rounded-tr-[44px] rounded-br-[44px] rounded-bl-[44px] pointer-events-none"
                         />
                         {/* Front Border (Main Box) */}
                         <div
-                            className="absolute inset-0 border-2 border-p-5 rounded-tr-[44px] rounded-br-[44px] rounded-bl-[44px] bg-white z-10 pointer-events-none bg-white"
+                            className="absolute inset-0 border-2 border-p-5 rounded-tr-[44px] rounded-br-[44px] rounded-bl-[44px] bg-white pointer-events-none"
                         />
 
                         {/* Content Container */}
-                        <div className="relative z-20 w-full h-full flex flex-col md:flex-row justify-between items-start md:items-center py-10 px-6 md:px-[50px] gap-8">
+                        <div className="relative z-10 w-full h-full flex flex-col md:flex-row justify-between items-stretch py-10 px-6 md:px-[80px] gap-20">
                             {/* Section 1: Contact */}
-                            <div className="flex flex-col gap-5 w-full md:w-1/2">
-                                <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px]">Contact International Affairs</h3>
-                                <p className="text-grey-7 text-sm font-['Delight'] tracking-[0.56px]">Reach out to our international affairs office for partnership inquiries.</p>
+                            <div className="flex flex-col justify-center gap-11 w-full flex-1">
+                                <div className="flex flex-col gap-5">
+                                    <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px] whitespace-nowrap">Contact International Affairs</h3>
+                                    <p className="text-grey-7/60 text-sm font-['Delight'] tracking-[0.56px]">Reach out to our international affairs office for partnership inquiries.</p>
+                                </div>
                                 <div className="w-fit px-5 py-2.5 outline outline-1 outline-p-7 flex justify-center items-center cursor-pointer hover:bg-p-7 hover:text-white transition-colors">
                                     <span className="text-p-7 hover:text-white text-base font-normal font-['Delight'] tracking-[0.32px]">Get in touch</span>
                                 </div>
                             </div>
 
-                            {/* Divider (Optional, visually separating if needed) */}
-                            <div className="hidden md:block w-[1px] h-[150px] bg-gray-200" />
-
                             {/* Section 2: Explore */}
-                            <div className="flex flex-col gap-5 w-full md:w-1/2">
-                                <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px]">Explore Research Collaborations</h3>
-                                <p className="text-grey-7 text-sm font-['Delight'] tracking-[0.56px]">Discover ongoing research projects open for international collaboration.</p>
+                            <div className="flex flex-col justify-center gap-11 w-full flex-1">
+                                <div className="flex flex-col gap-5">
+                                    <h3 className="text-p-8 text-2xl font-medium font-['Delight'] tracking-[0.96px] whitespace-nowrap">Explore Research Collaborations</h3>
+                                    <p className="text-grey-7/60 text-sm font-['Delight'] tracking-[0.56px]">Discover ongoing research projects open for international collaboration.</p>
+                                </div>
                                 <div className="w-fit px-5 py-2.5 outline outline-1 outline-p-7 flex justify-center items-center cursor-pointer hover:bg-p-7 hover:text-white transition-colors">
                                     <span className="text-p-7 hover:text-white text-base font-normal font-['Delight'] tracking-[0.32px]">View Research</span>
                                 </div>
@@ -464,7 +565,6 @@ export default function InternationalEngagementsPage() {
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     );
