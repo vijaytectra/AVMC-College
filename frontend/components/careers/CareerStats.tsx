@@ -17,8 +17,8 @@ const CareerStats: React.FC = () => {
     ];
 
     return (
-        <div className="w-full flex justify-center py-[60px] px-4 bg-white">
-            <div className="w-full max-w-[1037px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="w-full flex justify-center py-[60px] px-4 md:px-8 xl:px-[200px] bg-white">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
                 {stats.map((stat, index) => (
                     <div
                         key={index}
@@ -27,7 +27,7 @@ const CareerStats: React.FC = () => {
                         {/* 
                           Background Image Overlay 
                         */}
-                        <div className="absolute inset-0 md:inset-auto md:left-[-470px] md:top-[-88.5px] w-full h-full md:w-[783px] md:h-[483px] pointer-events-none">
+                        <div className="absolute inset-0 w-full h-full pointer-events-none">
                             <Image
                                 src="/images/faculty members bg.png"
                                 alt="Background Pattern"

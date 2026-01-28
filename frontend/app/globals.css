@@ -115,14 +115,14 @@
 
 @font-face {
   font-family: 'GC Amelie Promised Demo';
-  src: url('/fonts/gc-amelie-promised-demo.ttf') format('truetype');
+  src: url('/fonts/GC Amelie Promised Demo.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GC Amelie Promised Demo';
-  src: url('/fonts/gc-amelie-promised-demo-italic.ttf') format('truetype');
+  src: url('/fonts/GC Amelie Promised Italic Demo.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
