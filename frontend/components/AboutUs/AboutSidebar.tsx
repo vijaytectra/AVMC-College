@@ -50,6 +50,11 @@ export default function AboutSidebar() {
                 )}
             </div>
 
+            {/* Committees */}
+            <Link href="/about/committees" className="self-stretch p-2.5 border-b-[0.5px] border-grey-5 inline-flex justify-start items-center gap-2.5 hover:bg-grey-1 transition-colors">
+                <div className="justify-center text-grey-7 text-base font-normal font-delight leading-6">Committees</div>
+            </Link>
+
             {/* Other Dropdowns */}
             {["Accreditations & Rankings", "Infrastructure", "Quality Assurance"].map((item) => (
                 <div key={item} className="self-stretch p-2.5 border-b-[0.5px] border-grey-5 inline-flex justify-between items-center cursor-pointer hover:bg-grey-1 transition-colors">

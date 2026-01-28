@@ -11,7 +11,7 @@ export default function HospitalServices() {
                     {/* Header Section */}
                     <div className="w-full flex flex-col md:flex-row justify-between items-start gap-6">
                         <div className="flex flex-col justify-center items-start gap-6 max-w-[561px]">
-                            <h2 className="text-white text-5xl font-normal font-amelie italic leading-8">Hospital Services</h2>
+                            <h2 className="text-white text-5xl font-normal font-gc-amelie italic leading-8">Hospital Services</h2>
                             <p className="text-grey-4/70 text-xl font-light font-delight leading-8">
                                 AVMCH Hospital features 540+ beds for tertiary care.
                             </p>
@@ -29,64 +29,64 @@ export default function HospitalServices() {
                     <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-18 lg:gap-6">
                         {/* Card 1: Critical Care */}
                         <div className="flex flex-col justify-start items-start gap-3.5 w-full">
-                            <div className="w-full h-64 lg:h-auto lg:aspect-[250/300] relative bg-grey-9">
+                            <div className="w-full aspect-[250/300] relative bg-grey-9">
                                 <Image className="object-cover" src="/images/critical-care.png" alt="Critical Care" fill />
                             </div>
                             <div className="self-stretch flex flex-col justify-start items-start gap-6">
-                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-5 tracking-tight">
+                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-7">
                                     Fully equipped units for all ages.
                                 </div>
                                 <div className="flex flex-col justify-start items-start gap-2">
                                     <h3 className="text-grey-1 text-2xl font-normal font-delight leading-5 tracking-wide">Critical Care</h3>
-                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-5 tracking-tight">ICCU, ICU, PICU, NICU, Modular OT</p>
+                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-6">ICCU, ICU, PICU, NICU, Modular OT</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Card 2: Super-Specialties */}
                         <div className="flex flex-col justify-start items-start gap-3.5 w-full lg:mt-24">
-                            <div className="w-full h-64 lg:h-auto lg:aspect-[250/300] relative bg-grey-9">
+                            <div className="w-full aspect-[250/300] relative bg-grey-9">
                                 <Image className="object-cover" src="/images/super-specialties.png" alt="Super-Specialties" fill />
                             </div>
                             <div className="self-stretch flex flex-col justify-start items-start gap-6">
-                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-5 tracking-tight">
+                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-7">
                                     Advanced dialysis, laparoscopy, lithotripsy.
                                 </div>
                                 <div className="flex flex-col justify-start items-start gap-2">
                                     <h3 className="text-grey-1 text-2xl font-normal font-delight leading-5 tracking-wide">Super-Specialties</h3>
-                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-5 tracking-tight">Cardiology, Urology, Nephrology, Surgery</p>
+                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-6">Cardiology, Urology, Nephrology, Surgery</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Card 3: Diagnostics */}
                         <div className="flex flex-col justify-start items-start gap-3.5 w-full">
-                            <div className="w-full h-64 lg:h-auto lg:aspect-[250/300] relative bg-grey-9">
+                            <div className="w-full aspect-[250/300] relative bg-grey-9">
                                 <Image className="object-cover" src="/images/diagnostics.png" alt="Diagnostics" fill />
                             </div>
                             <div className="self-stretch flex flex-col justify-start items-start gap-6">
-                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-5 tracking-tight">
+                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-7">
                                     NABL virology lab, 24/7 services.
                                 </div>
                                 <div className="flex flex-col justify-start items-start gap-2">
                                     <h3 className="text-grey-1 text-2xl font-normal font-delight leading-5 tracking-wide">Diagnostics</h3>
-                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-5 tracking-tight">Cath Lab, 1.5T MRI, 124-slice CT</p>
+                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-6">Cath Lab, 1.5T MRI, 124-slice CT</p>
                                 </div>
                             </div>
                         </div>
 
                         {/* Card 4: Support */}
                         <div className="flex flex-col justify-start items-start gap-3.5 w-full lg:mt-24">
-                            <div className="w-full h-64 lg:h-auto lg:aspect-[250/300] relative bg-grey-9">
+                            <div className="w-full aspect-[250/300] relative bg-grey-9">
                                 <Image className="object-cover" src="/images/support.png" alt="Support" fill />
                             </div>
                             <div className="self-stretch flex flex-col justify-start items-start gap-6">
-                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-5 tracking-tight">
+                                <div className="w-full text-grey-4/70 text-sm font-light font-delight leading-7">
                                     Full audiology, physio, therapy.
                                 </div>
                                 <div className="flex flex-col justify-start items-start gap-2">
                                     <h3 className="text-grey-1 text-2xl font-normal font-delight leading-5 tracking-wide">Support</h3>
-                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-5 tracking-tight">Pharmacy, Blood Bank, Rehab</p>
+                                    <p className="text-grey-1/70 text-xs font-light font-delight leading-6">Pharmacy, Blood Bank, Rehab</p>
                                 </div>
                             </div>
                         </div>
