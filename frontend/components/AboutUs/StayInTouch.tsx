@@ -9,7 +9,7 @@ export default function StayInTouch() {
 
                 {/* Header */}
                 <div className="flex flex-col justify-start items-center gap-4 text-center">
-                    <h2 className="text-primary-7 text-4xl font-normal font-amelie italic tracking-tight">
+                    <h2 className="text-primary-7 text-4xl font-normal font-gc-amelie italic tracking-tight">
                         Let’s stay in touch!
                     </h2>
                     <p className="text-primary-7 text-sm font-light font-delight leading-5 tracking-wide">

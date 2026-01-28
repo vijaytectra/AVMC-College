@@ -32,7 +32,7 @@ export default function CampusExcellence() {
                             <div className="self-stretch text-primary-7 text-sm font-light font-delight leading-5 tracking-wider uppercase">
                                 Campus Excellence
                             </div>
-                            <div className="self-stretch text-grey-8 text-3xl font-normal font-amelie italic leading-10">
+                            <div className="self-stretch text-grey-8 text-3xl font-normal font-gc-amelie italic leading-10">
                                 Modern Infrastructure & Holistic Living
                             </div>
                         </div>

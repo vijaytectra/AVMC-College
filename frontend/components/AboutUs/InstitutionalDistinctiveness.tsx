@@ -34,7 +34,7 @@ export default function InstitutionalDistinctiveness() {
 
                 {/* Header */}
                 <div className="self-stretch flex flex-col justify-center items-center gap-4">
-                    <div className="text-center text-primary-7 text-4xl font-normal font-amelie italic">
+                    <div className="text-center text-primary-7 text-4xl font-normal font-gc-amelie italic">
                         Institutional Distinctiveness
                     </div>
                     <div className="text-center text-grey-7/70 text-lg font-light font-delight leading-6 tracking-tight">
@@ -58,10 +58,10 @@ export default function InstitutionalDistinctiveness() {
                             {/* Content */}
                             <div className="self-stretch flex flex-col justify-start items-start gap-3">
                                 <div className="self-stretch flex flex-col justify-start items-start gap-4">
-                                    <div className="self-stretch justify-start text-primary-7 text-xl font-normal font-amelie italic leading-6">
+                                    <div className="self-stretch justify-start text-primary-7 text-xl font-normal font-gc-amelie italic leading-6">
                                         {card.title}
                                     </div>
-                                    <div className="self-stretch justify-start text-grey-6/70 text-xs font-normal font-delight leading-4 tracking-tight">
+                                    <div className="self-stretch justify-start text-grey-6/70 text-xs font-normal font-delight leading-4 tracking-wide">
                                         {card.description}
                                     </div>
                                 </div>

@@ -113,6 +113,41 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'DM_Mono';
+  src: url('/fonts/DMMono-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DM_Mono';
+  src: url('/fonts/DMMono-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'DM_Mono';
+  src: url('/fonts/DMMono-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'GC_Amelie';
+  src: url('/fonts/GC-Amelie-Promised-Demo.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GC_Amelie';
+  src: url('/fonts/GC Amelie Promised Italic Demo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -169,6 +204,7 @@
   --color-p-8: #1F1C58;
   --color-p-9: #171549;
   --color-p-10: #100E3A;
+  --color-p-11: #EDECF8;
   --color-info: #3B82F6;
   --color-grey-1: #FAFAFA;
   --color-grey-2: #F5F5F5;
@@ -190,6 +226,7 @@
   --font-delight: "Delight";
   --font-dm-sans: "DM_Sans";
   --font-dm-mono: "DM_Mono";
+  --font-gc-amelie: "GC_Amelie";
 }
 
 :root {

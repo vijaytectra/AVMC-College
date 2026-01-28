@@ -23,10 +23,10 @@ export default function AboutPage() {
 
                 {/* Central Card Overlay */}
                 <div className="relative z-10 w-[90%] md:w-96 h-auto md:h-36 bg-white/20 border-l-[11px] border-s6 flex flex-col items-center justify-center">
-                    <h1 className="text-white text-4xl md:text-5xl font-amelie italic">
+                    <h1 className="text-white text-4xl md:text-5xl font-gc-amelie italic">
                         Who We Are
                     </h1>
-                    <div className="self-stretch flex justify-center text-center text-grey-4/80 text-sm  font-delight uppercase tracking-wide">
+                    <div className="self-stretch flex justify-center text-center text-grey-4/80 font-delight font-normal text-sm uppercase tracking-wide">
                         home &gt; About
                     </div>
 
@@ -84,7 +84,7 @@ export default function AboutPage() {
                             <div className="w-full bg-p-8 p-8 md:p-12 shadow-[12px_12px_0px_0px_#cccccc]">
                                 <div className="flex flex-col gap-6">
                                     <div className="flex items-center gap-5">
-                                        <h3 className="text-grey-1 text-3xl font-normal font-amelie italic leading-8 whitespace-nowrap">Our Story</h3>
+                                        <h3 className="text-grey-1 text-3xl font-normal font-gc-amelie italic leading-8 whitespace-nowrap">Our Story</h3>
                                         {/* Horizontal Line */}
                                         <div className="flex-1 h-px bg-white/40"></div>
                                     </div>
@@ -112,8 +112,8 @@ export default function AboutPage() {
                                 <Image className="object-cover" src="/images/mbbs-card.png" alt="MBBS" fill />
                             </div>
                             <div className="self-stretch  p-6 bg-white flex flex-col justify-start items-start gap-2.5">
-                                <div className="self-stretch justify-center text-black text-xl font-normal font-amelie italic uppercase leading-8">MBBS</div>
-                                <div className="self-stretch justify-center text-grey-8/70 text-sm font-light font-delight leading-5 tracking-tight">Annual intake of 150 students since 2000-2001, forming the core undergraduate program.</div>
+                                <div className="self-stretch justify-center text-black text-xl font-normal font-gc-amelie italic uppercase leading-8">MBBS</div>
+                                <div className="self-stretch justify-center text-grey-8/70 text-sm font-light font-delight leading-7">Annual intake of 150 students since 2000-2001, forming the core undergraduate program.</div>
                             </div>
                         </div>
 
@@ -123,8 +123,8 @@ export default function AboutPage() {
                                 <Image className="object-cover" src="/images/postgrad-card.png" alt="Postgraduate" fill />
                             </div>
                             <div className="self-stretch  p-6 bg-white flex flex-col justify-start items-start gap-2.5">
-                                <div className="self-stretch justify-center text-black text-xl font-normal font-amelie italic uppercase leading-8">POSTGRADUATE</div>
-                                <div className="self-stretch justify-center text-grey-8/70 text-sm font-light font-delight leading-5 tracking-tight">19 disciplines with 99 seats annually, supporting specialized medical training.</div>
+                                <div className="self-stretch justify-center text-black text-xl font-normal font-gc-amelie italic uppercase leading-8">POSTGRADUATE</div>
+                                <div className="self-stretch justify-center text-grey-8/70 text-sm font-light font-delight leading-7">19 disciplines with 99 seats annually, supporting specialized medical training.</div>
                             </div>
                         </div>
 
@@ -134,8 +134,8 @@ export default function AboutPage() {
                                 <Image className="object-cover" src="/images/students-card.png" alt="Students" fill />
                             </div>
                             <div className="self-stretch  p-6 bg-white flex flex-col justify-start items-start gap-2.5">
-                                <div className="self-stretch justify-center text-black text-xl font-normal font-amelie italic uppercase leading-8">STUDENTS & MORE</div>
-                                <div className="self-stretch justify-center text-grey-8/70 text-sm font-light font-delight leading-5 tracking-tight">Over 750 UG/PG students enrolled; includes Ph.D. programs, nursing, allied health sciences, and physiotherapy for interprofessional learning</div>
+                                <div className="self-stretch justify-center text-black text-xl font-normal font-gc-amelie italic uppercase leading-8">STUDENTS & MORE</div>
+                                <div className="self-stretch justify-center text-grey-8/70 text-sm font-light font-delight leading-7">Over 750 UG/PG students enrolled; includes Ph.D. programs, nursing, allied health sciences, and physiotherapy for interprofessional learning</div>
                             </div>
                         </div>
                     </div>
