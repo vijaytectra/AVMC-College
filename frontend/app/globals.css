@@ -137,16 +137,20 @@
 @font-face {
   font-family: 'GC_Amelie';
   src: url('/fonts/GC-Amelie-Promised-Demo.woff2') format('woff2');
+  font-family: 'GC Amelie Promised Demo';
+  src: url('/fonts/GC Amelie Promised Demo.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GC_Amelie';
+  font-family: 'GC Amelie Promised Demo';
   src: url('/fonts/GC Amelie Promised Italic Demo.ttf') format('truetype');
   font-weight: normal;
   font-style: italic;
 }
+
 
 @custom-variant dark (&:is(.dark *));
 
@@ -222,6 +226,7 @@
   --color-s10: #750F10;
   --font-inter: var(--font-inter);
   --font-mounsta: "Mounsta";
+  --font-gc-amelie: "GC Amelie Promised Demo";
 
   --font-delight: "Delight";
   --font-dm-sans: "DM_Sans";

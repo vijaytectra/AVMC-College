@@ -5,9 +5,12 @@ import Image from "next/image";
 import { useState } from "react";
 import { Search } from "lucide-react";
 
+import AboutMegaMenu from "./AboutMegaMenu";
+
 export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [activeAccordion, setActiveAccordion] = useState<string | null>(null); // Default closed
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     const toggleAccordion = (title: string) => {
         setActiveAccordion(activeAccordion === title ? null : title);
@@ -57,7 +60,7 @@ export function Header() {
 
             {/* Main Header */}
             <header className="sticky top-0 z-50 w-full min-h-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-t-[6px] border-s6 md:border-t-0 bg-white">
-                <div className="w-full max-w-[1600px] mx-auto flex h-20 items-center justify-between px-4 xl:px-8">
+                <div className="w-full max-w-[1600px] mx-auto flex h-20 items-center justify-between px-4 xl:px-8 relative">
 
                     {/* --- DESKTOP VIEW --- */}
 
@@ -70,7 +73,12 @@ export function Header() {
 
                     {/* Center: Navigation & Search (Desktop) */}
                     <div className="hidden xl:flex items-center gap-1">
-                        <Link href="/about" className="px-1.5 py-2 text-grey-8 text-xs font-semibold hover:text-primary transition-colors whitespace-nowrap">About</Link>
+                        <div
+                            className="px-1.5 py-2 text-grey-8 text-xs font-semibold hover:text-primary transition-colors whitespace-nowrap cursor-pointer select-none"
+                            onClick={() => setActiveDropdown(activeDropdown === 'About' ? null : 'About')}
+                        >
+                            About
+                        </div>
                         <Link href="/constituent-institution" className="px-1.5 py-2 text-grey-8 text-xs font-semibold hover:text-primary transition-colors whitespace-nowrap">Constituent Institution</Link>
                         <Link href="/program-admission" className="px-1.5 py-2 text-grey-8 text-xs font-semibold hover:text-primary transition-colors whitespace-nowrap">Program & Admission</Link>
                         <Link href="/academic" className="px-1.5 py-2 text-grey-8 text-xs font-semibold hover:text-primary transition-colors whitespace-nowrap">Academic</Link>
@@ -118,6 +126,12 @@ export function Header() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Mega Menu Render */}
+                    {activeDropdown === 'About' && (
+                        <AboutMegaMenu />
+                    )}
+
                 </div>
             </header>
 
