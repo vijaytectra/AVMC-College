@@ -258,7 +258,7 @@ export default function NewsletterPage() {
 
             {/* Newsletter Subscription Section */}
             <div className="w-full px-4 md:px-8 xl:px-[200px] mb-20 flex justify-center">
-                <div className="w-full bg-[#262366] py-8 px-4 md:px-11 flex flex-col gap-11">
+                <div className="w-full bg-p-7 py-8 px-4 md:px-11 flex flex-col gap-11">
                     <div className="flex flex-col gap-1">
                         <h2 className="text-white text-3xl font-normal font-gc-amelie italic tracking-[-0.01em] self-start">Advance Your Knowledge</h2>
                         <p className="text-gray-300 text-lg font-normal font-delight tracking-[0.02em]">Get the latest medical insights and college updates straight to your inbox.</p>

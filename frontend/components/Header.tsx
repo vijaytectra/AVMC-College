@@ -185,10 +185,10 @@ export function Header() {
                                                 <div className="pl-2.5 pr-2.5 flex flex-col gap-2.5">
                                                     <div className="text-[#2D2A74] text-base font-medium font-['DM_Sans']">Undergraduate</div>
                                                     <div className="pl-2.5 border-l border-gray-400 flex flex-col gap-4">
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>MBBS</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>B.Sc Nursing</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>B. Optom</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Allied Health Scieneces</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>MBBS</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>B.Sc Nursing</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>B. Optom</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Allied Health Scieneces</Link>
                                                     </div>
                                                 </div>
 
@@ -196,10 +196,10 @@ export function Header() {
                                                 <div className="pl-2.5 pr-2.5 flex flex-col gap-2.5">
                                                     <div className="text-[#2D2A74] text-base font-medium font-['DM_Sans']">Postgraduate</div>
                                                     <div className="pl-2.5 border-l border-gray-400 flex flex-col gap-4">
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>MD / MS</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>M.Sc Nursing</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>MPT</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Fellowship Courses</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>MD / MS</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>M.Sc Nursing</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>MPT</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Fellowship Courses</Link>
                                                     </div>
                                                 </div>
 
@@ -207,10 +207,10 @@ export function Header() {
                                                 <div className="pl-2.5 pr-2.5 flex flex-col gap-2.5">
                                                     <div className="text-[#2D2A74] text-base font-medium font-['DM_Sans']">Admissions</div>
                                                     <div className="pl-2.5 border-l border-gray-400 flex flex-col gap-4">
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Entrance Exams</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Fee Structure</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Scholarships</Link>
-                                                        <Link href="#" className="text-[#525252] text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>International Students</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Entrance Exams</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Fee Structure</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>Scholarships</Link>
+                                                        <Link href="#" className="text-grey-7 text-sm font-normal font-['DM_Sans']" onClick={toggleMenu}>International Students</Link>
                                                     </div>
                                                 </div>
                                             </div>
