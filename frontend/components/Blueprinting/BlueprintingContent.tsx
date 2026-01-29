@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const BlueprintingContent: React.FC = () => {
     return (
-        <div className="w-full bg-Background flex flex-col items-center overflow-hidden pb-10">
+        <div className="w-full bg-[#F8FAFC] flex flex-col items-center overflow-hidden pb-10">
             {/* Hero Section */}
             <div className="w-full max-w-[1040px] flex flex-col items-center mt-12 px-4">
                 <div className="px-5 py-2.5 rounded-[100px] outline outline-1 outline-offset-[-1px] outline-p-2 inline-flex justify-center items-center gap-2.5 mb-6">
@@ -184,12 +184,12 @@ const BlueprintingContent: React.FC = () => {
                 <div className="text-center text-p-7 text-3xl font-normal font-gc-amelie italic leading-9 mb-12">Workshop Highlights</div>
                 <div className="flex flex-col gap-2">
                     <div className="flex flex-col md:flex-row gap-2">
-                        <Image className="flex-[2] h-80 object-cover" src="/images/Rectangle%20130.png" alt="Highlight 1" width={600} height={320} />
-                        <Image className="flex-1 h-80 object-cover" src="/images/Rectangle%20131.png" alt="Highlight 2" width={300} height={320} />
+                        <Image className="w-full md:flex-[2] h-80 object-cover" src="/images/Rectangle%20130.png" alt="Highlight 1" width={600} height={320} />
+                        <Image className="w-full md:flex-1 h-80 object-cover" src="/images/Rectangle%20131.png" alt="Highlight 2" width={300} height={320} />
                     </div>
                     <div className="flex flex-col md:flex-row gap-2">
-                        <Image className="flex-1 h-80 object-cover" src="/images/Rectangle%20132.png" alt="Highlight 3" width={300} height={320} />
-                        <Image className="flex-[2] h-80 object-cover" src="/images/Rectangle%20133.png" alt="Highlight 4" width={600} height={320} />
+                        <Image className="w-full md:flex-1 h-80 object-cover" src="/images/Rectangle%20132.png" alt="Highlight 3" width={300} height={320} />
+                        <Image className="w-full md:flex-[2] h-80 object-cover" src="/images/Rectangle%20133.png" alt="Highlight 4" width={600} height={320} />
                     </div>
                 </div>
             </div>
@@ -197,7 +197,16 @@ const BlueprintingContent: React.FC = () => {
             {/* Statistics */}
             <div className="w-full max-w-[1040px] px-4 mt-12 mb-12">
                 <div className="w-full p-8 bg-p-7 rounded-xl relative overflow-hidden">
-                    <div className="hidden md:block absolute top-[-50%] left-[-10%] w-[50%] h-[200%] bg-white/10 rotate-[-40deg]"></div>
+                    {/* Decorative Images */}
+                    <div className="hidden md:block absolute left-0 top-0 h-full w-[355px] pointer-events-none z-0">
+                        <Image src="/images/open positions 1.png" alt="Decorative Left" fill className="object-cover" />
+                    </div>
+                    <div className="hidden md:block absolute left-[150px] bottom-0 h-[100px] w-[170px] pointer-events-none z-0">
+                        <Image src="/images/open position 2.png" alt="Decorative Right Bottom" fill className="object-contain" />
+                    </div>
+                    <div className="hidden md:block absolute right-0 bottom-0 h-[300px] w-[300px] pointer-events-none z-0">
+                        <Image src="/images/open position 3.png" alt="Decorative Right Bottom" fill className="object-contain" />
+                    </div>
                     <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-8">
                         {[
                             { val: "45+", label: "Faculty Participants" },

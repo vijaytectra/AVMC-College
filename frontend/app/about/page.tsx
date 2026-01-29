@@ -22,7 +22,7 @@ export default function AboutPage() {
                 </div>
 
                 {/* Central Card Overlay */}
-                <div className="relative z-10 w-[90%] md:w-96 h-auto md:h-36 bg-white/20 border-l-[11px] border-s6 flex flex-col items-center justify-center">
+                <div className="relative z-10 w-[90%] md:w-96 h-auto md:h-36 bg-white/20 border-l-[11px] border-s6 border-t border-b border-t-white border-b-white flex flex-col items-center justify-center">
                     <h1 className="text-white text-4xl md:text-5xl font-gc-amelie italic">
                         Who We Are
                     </h1>

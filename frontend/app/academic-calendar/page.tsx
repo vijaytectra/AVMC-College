@@ -23,7 +23,7 @@ export default function AcademicCalendarPage() {
 
                 {/* Center Title Card */}
                 <div className="absolute inset-0 z-20 flex items-center justify-center">
-                    <div className="w-auto px-2 md:px-5 h-auto py-8 md:py-0 md:h-36 bg-white/20 border-l-[11px] border-s6 backdrop-blur-[2px] flex flex-col items-center justify-center gap-4">
+                    <div className="w-auto px-2 md:px-5 h-auto py-8 md:py-0 md:h-36 bg-white/20 border-l-[11px] border-s6 border-t border-b border-t-white border-b-white backdrop-blur-[2px] flex flex-col items-center justify-center gap-4">
                         <h1 className="text-white text-3xl md:text-5xl font-gc-amelie italic font-normal text-center leading-tight whitespace-nowrap">Academic Calendar</h1>
                         <div className="text-white text-xs md:text-sm font-delight uppercase tracking-wide text-center">
                             ACADEMIC &gt; ACADEMIC calendar
