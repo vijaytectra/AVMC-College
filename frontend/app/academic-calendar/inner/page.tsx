@@ -88,12 +88,28 @@ export default function InnerAcademicCalendarPage() {
                     {/* Stats Grid */}
                     <div className="p-3 bg-white">
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
-                            <InfoCard label="Institution" value="AARUPADAI VEEDU MEDICAL COLLEGE & HOSPITAL" />
-                            <InfoCard label="Duration" value="October 2025 - August 2026" />
-                            <InfoCard label="Students" value="150 Enrolled" />
-                            <InfoCard label="Phase" value="Phase I (Pre-Clinical)" />
+                            <InfoCard
+                                label="Institution"
+                                value="AARUPADAI VEEDU MEDICAL COLLEGE & HOSPITAL"
+                                icon="/icons/ac_institution.png"
+                            />
+                            <InfoCard
+                                label="Duration"
+                                value="October 2025 - August 2026"
+                                icon="/icons/ac_duration.png"
+                            />
+                            <InfoCard
+                                label="Students"
+                                value="150 Enrolled"
+                                icon="/icons/ac_students.png"
+                            />
+                            <InfoCard
+                                label="Phase"
+                                value="Phase I (Pre-Clinical)"
+                                icon="/icons/ac_phase.png"
+                            />
                         </div>
-                        <div className="mt-3 flex justify-center items-center">
+                        <div className="mt-3 flex justify-start items-center">
                             <p className="text-grey-6 text-sm">Subject to University / Regulatory authority changes</p>
                         </div>
                     </div>
@@ -101,7 +117,7 @@ export default function InnerAcademicCalendarPage() {
 
                 {/* Month-wise Calendar Title */}
                 <div className="flex items-center gap-3.5 text-[#262366]">
-                    <div className="w-1 h-8 bg-[#262366] rounded-full"></div>
+                    <Image src="/icons/calendar_today.svg" width={25} height={25} alt="Calendar" className="w-6 h-6" />
                     <h2 className="text-2xl font-normal">I MBBS - Month-wise Academic Calendar</h2>
                 </div>
 
@@ -110,58 +126,58 @@ export default function InnerAcademicCalendarPage() {
                     <CalendarMonth
                         month="October"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Completed' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Completed', icon: '/icons/ac_exam_pencil.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="December"
                         events={[
-                            { date: '15.12.2025 to 20.12.2025', type: 'vacation', typeColor: 'vacation', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' },
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: 'Circular issued - Master Timetable, Academic Calendar & Schedules', status: 'Upcoming' }
+                            { date: '15.12.2025 to 20.12.2025', type: 'vacation', typeColor: 'vacation', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_vacation.png' },
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: 'Circular issued - Master Timetable, Academic Calendar & Schedules', status: 'Upcoming', icon: '/icons/ac_exam_book.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="January"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Ptm', typeColor: 'ptm', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Ptm', typeColor: 'ptm', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_ptm.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="March"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_exam_pencil.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="April"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_exam_pencil.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="May"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_exam_pencil.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="June"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_exam_pencil.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="July"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' },
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: 'Circular issued - Master Timetable, Academic Calendar & Schedules', status: 'Completed' },
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: 'Circular issued - Master Timetable, Academic Calendar & Schedules', status: 'Completed' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_exam_pencil.png' },
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: 'Circular issued - Master Timetable, Academic Calendar & Schedules', status: 'Completed', icon: '/icons/ac_exam_book.png' },
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: 'Circular issued - Master Timetable, Academic Calendar & Schedules', status: 'Completed', icon: '/icons/ac_exam_book.png' }
                         ]}
                     />
                     <CalendarMonth
                         month="August"
                         events={[
-                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming' }
+                            { date: '01.06.2026 to 06.06.2026', type: 'Exam', typeColor: 'exam', desc: '1st Internal Assessment (IA-1)', status: 'Upcoming', icon: '/icons/ac_exam_pencil.png' }
                         ]}
                     />
                 </div>
@@ -169,45 +185,47 @@ export default function InnerAcademicCalendarPage() {
                 {/* Examination Details */}
                 <div className="flex flex-col gap-4">
                     <div className="flex items-center gap-3.5 text-[#262366]">
-                        <div className="w-1 h-8 bg-[#262366] rounded-full"></div>
-                        <h2 className="text-2xl font-normal">Examination Details</h2>
+                        <Image src="/icons/calendar_today.svg" width={25} height={25} alt="Calendar" className="w-6 h-6" />
+                        <h2 className="text-2xl font-normal">I MBBS - Month-wise Academic Calendar</h2>
                     </div>
-                    <div className="flex flex-col">
-                        <div className="bg-[#2D2A74] p-6 flex text-white text-base font-medium hidden md:flex">
-                            <div className="w-44">Date</div>
-                            <div className="w-80">Examination Type</div>
-                            <div className="flex-1">Details / Portions</div>
+                    <div className="w-full overflow-x-auto">
+                        <div className="min-w-[900px] flex flex-col">
+                            <div className="bg-[#2D2A74] p-6 flex gap-4 text-white text-base font-medium">
+                                <div className="w-44 shrink-0">Date</div>
+                                <div className="w-80 shrink-0">Examination Type</div>
+                                <div className="flex-1">Details / Portions</div>
+                            </div>
+                            <ExamRow
+                                date="15.12.2025 - 20.12.2025"
+                                type="1st Internal Assessment (IA-1)"
+                                details="Anatomy: General Anatomy, General Histology, General Embryology, Upper Limb; Physiology: General Physiology, Body Fluid, Blood, Immunity, Nerve & Muscle; Biochemistry: Cell, Carbohydrate Chemistry, Lipid Chemistry, Amino Acid & Protein Chemistry, Plasma proteins, Immunology, Hemoglobin chemistry & Metabolism, Enzymes"
+                            />
+                            <ExamRow
+                                date="23.03.2026 - 30.03.2026"
+                                type="2nd Internal Assessment (IA-2)"
+                                details="Physiology: CVS, RS, Endocrine, Reproduction; Biochemistry: Carbohydrate and Lipid Metabolism, Vitamins, Regulation of blood glucose & DM, TCA & ETC; Anatomy: Lower limb, Thorax, Endocrine & Reproductive system"
+                            />
+                            <ExamRow
+                                date="01.06.2026 - 06.06.2026"
+                                type="3rd Internal Assessment (IA-3)"
+                                details="Biochemistry: Protein metabolism, minerals, nutrition, acid base balance, Organ function tests, Molecular Biology; Anatomy: Head and Neck, Abdomen, Neuroanatomy; Physiology: CNS, Special senses, GIT, Renal"
+                            />
+                            <ExamRow
+                                date="06.07.2026 - 14.07.2026"
+                                type="Send-up Examination (Theory)"
+                                details="Complete syllabus - All subjects"
+                            />
+                            <ExamRow
+                                date="16.07.2026 - 18.07.2026"
+                                type="Send-up Examination (Practicals)"
+                                details="All practical components"
+                            />
+                            <ExamRow
+                                date="August 2026 (1st or 2nd week - tentative)"
+                                type="University Examination"
+                                details="Theory & Practical"
+                            />
                         </div>
-                        <ExamRow
-                            date="15.12.2025 - 20.12.2025"
-                            type="1st Internal Assessment (IA-1)"
-                            details="Anatomy: General Anatomy, General Histology, General Embryology, Upper Limb; Physiology: General Physiology, Body Fluid, Blood, Immunity, Nerve & Muscle; Biochemistry: Cell, Carbohydrate Chemistry, Lipid Chemistry, Amino Acid & Protein Chemistry, Plasma proteins, Immunology, Hemoglobin chemistry & Metabolism, Enzymes"
-                        />
-                        <ExamRow
-                            date="23.03.2026 - 30.03.2026"
-                            type="2nd Internal Assessment (IA-2)"
-                            details="Physiology: CVS, RS, Endocrine, Reproduction; Biochemistry: Carbohydrate and Lipid Metabolism, Vitamins, Regulation of blood glucose & DM, TCA & ETC; Anatomy: Lower limb, Thorax, Endocrine & Reproductive system"
-                        />
-                        <ExamRow
-                            date="01.06.2026 - 06.06.2026"
-                            type="3rd Internal Assessment (IA-3)"
-                            details="Biochemistry: Protein metabolism, minerals, nutrition, acid base balance, Organ function tests, Molecular Biology; Anatomy: Head and Neck, Abdomen, Neuroanatomy; Physiology: CNS, Special senses, GIT, Renal"
-                        />
-                        <ExamRow
-                            date="06.07.2026 - 14.07.2026"
-                            type="Send-up Examination (Theory)"
-                            details="Complete syllabus - All subjects"
-                        />
-                        <ExamRow
-                            date="16.07.2026 - 18.07.2026"
-                            type="Send-up Examination (Practicals)"
-                            details="All practical components"
-                        />
-                        <ExamRow
-                            date="August 2026 (1st or 2nd week - tentative)"
-                            type="University Examination"
-                            details="Theory & Practical"
-                        />
                     </div>
                 </div>
 
@@ -216,18 +234,18 @@ export default function InnerAcademicCalendarPage() {
                     <h2 className="text-[#262366] text-2xl font-normal">Holidays & Vacations</h2>
                     <p className="text-grey-6 text-sm">Official holidays and vacation periods for the academic year 2025-2026.</p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {/* Academic Breaks */}
-                        <div className="bg-white p-6 flex flex-col gap-6 border border-grey-2">
-                            <h3 className="text-[#2D2A74] text-xl font-normal">Academic Breaks</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <BreakCard title="Mid-Semester Break" date="Oct 13-17, 2025" />
-                                <BreakCard title="Winter Vacation" date="Dec 15-26, 2025" />
-                                <BreakCard title="Spring Break" date="Mar 23-27, 2026" />
-                                <BreakCard title="Summer Vacation" date="Jun 1 - Jul 31, 2026" />
-                            </div>
+                    {/* Academic Breaks */}
+                    <div className="bg-white p-6 flex flex-col gap-6 border border-grey-2 w-full">
+                        <h3 className="text-[#2D2A74] text-xl font-normal">Academic Breaks</h3>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <BreakCard title="Mid-Semester Break" date="Oct 13-17, 2025" />
+                            <BreakCard title="Winter Vacation" date="Dec 15-26, 2025" />
+                            <BreakCard title="Spring Break" date="Mar 23-27, 2026" />
+                            <BreakCard title="Summer Vacation" date="Jun 1 - Jul 31, 2026" />
                         </div>
+                    </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* National Holidays */}
                         <div className="bg-white p-6 flex flex-col gap-6 border border-grey-2">
                             <h3 className="text-[#2D2A74] text-xl font-normal">National Holidays</h3>
@@ -256,7 +274,6 @@ export default function InnerAcademicCalendarPage() {
                                 <HolidayRow name="May Day" date="Aug 15, 2025" />
                             </div>
                         </div>
-
                     </div>
                     <p className="text-grey-6 text-xs">* Dates for religious holidays are tentative and will be confirmed based on the lunar calendar. Additional holidays may be declared by the university or government</p>
                 </div>
@@ -276,10 +293,10 @@ export default function InnerAcademicCalendarPage() {
 
                 {/* Handbook Download */}
                 <div className="bg-slate-50 p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-6 rounded-lg">
-                    <h3 className="text-[#2D2A74] text-2xl md:text-3xl font-normal font-gc-amelie max-w-lg text-center md:text-left">
+                    <h3 className="text-[#2D2A74] text-2xl md:text-3xl font-normal font-gc-amelie italic max-w-lg text-center md:text-left">
                         For the complete Student Handbook with all policies and procedures
                     </h3>
-                    <button className="bg-[#262366] text-white px-6 py-3 flex items-center gap-3 hover:bg-[#1F1C58] transition-colors rounded-sm">
+                    <button className="bg-[#262366] text-white px-6 py-3 flex items-center gap-3 hover:bg-[#1F1C58] transition-colors ">
                         <span>Download Student handbook (PDF)</span>
                         <Download size={16} />
                     </button>
@@ -292,14 +309,14 @@ export default function InnerAcademicCalendarPage() {
 
 // Sub-components for cleaner code
 
-function InfoCard({ label, value }: { label: string, value: string }) {
+function InfoCard({ label, value, icon }: { label: string, value: string, icon: string }) {
     return (
         <div className="h-44 p-6 bg-[#E8E7F4] flex flex-col justify-between">
             <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-zinc-300 rounded-sm"></div> {/* Placeholder icon bg */}
-                <span className="text-grey-8 text-sm">{label}</span>
+                <Image src={icon} width={32} height={32} alt={label} className="w-8 h-8 object-contain" />
+                <span className="text-[#2D2A74] text-base font-normal font-delight">{label}</span>
             </div>
-            <div className="text-grey-8 text-sm font-medium leading-6">{value}</div>
+            <div className="text-grey-8 text-sm md:text-base font-normal font-delight leading-6 uppercase">{value}</div>
         </div>
     );
 }
@@ -310,56 +327,71 @@ interface CalendarEvent {
     typeColor: string;
     desc: string;
     status: string;
+    icon?: string;
 }
 
 function CalendarMonth({ month, events }: { month: string, events: CalendarEvent[] }) {
     return (
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col items-end w-full">
             <div className="w-full px-6 py-3.5 bg-[#E8E7F4] text-[#2D2A74] text-base font-normal">
                 {month}
             </div>
-            {/* Header (Hidden on mobile? Or shown?) User design has headers for each month section if repeated, or once. 
-                User design repeats headers inside the month block? "Date Type Activity Status" appears inside October block.
-            */}
-            <div className="w-full bg-[#2D2A74] p-6 hidden md:flex text-white text-base font-medium">
-                <div className="w-44">Date</div>
-                <div className="w-44">Type</div>
-                <div className="w-72">Activity Description</div>
-                <div className="w-44">Status</div>
-            </div>
 
-            {events.map((ev, i) => (
-                <div key={i} className="w-full p-6 bg-white border-b border-grey-4/50 flex flex-col md:flex-row items-center justify-between gap-4">
-                    <div className="w-full md:w-44 text-grey-8 text-sm font-medium">{ev.date}</div>
-                    <div className="w-full md:w-44">
-                        <span className={`inline - flex items - center gap - 1.5 px - 2 py - 1 rounded - full text - sm border 
-                            ${ev.typeColor === 'exam' ? 'bg-[#E8E7F4] text-[#2D2A74] border-[#4B46A9]' : ''}
-                            ${ev.typeColor === 'vacation' ? 'bg-orange-50 text-orange-700 border-orange-200' : ''}
-                            ${ev.typeColor === 'ptm' ? 'bg-blue-50 text-blue-700 border-blue-200' : ''}
-`}>
-                            <span className="w-2 h-2 rounded-full bg-current"></span>
-                            {ev.type}
-                        </span>
+            <div className="w-full overflow-x-auto">
+                <div className="min-w-[900px]">
+                    {/* Header */}
+                    <div className="w-full bg-[#2D2A74] p-6 grid grid-cols-[11rem_11rem_1fr_11rem] gap-4 items-center text-white text-base font-medium">
+                        <div>Date</div>
+                        <div>Type</div>
+                        <div>Activity Description</div>
+                        <div>Status</div>
                     </div>
-                    <div className="w-full md:w-72 text-black text-sm">{ev.desc}</div>
-                    <div className="w-full md:w-44">
-                        <span className={`px - 4 py - 2 rounded - full text - xs border 
-                            ${ev.status === 'Completed' ? 'bg-emerald-50 text-emerald-600 border-emerald-200' : 'bg-grey-1 text-grey-7 border-grey-4'}
-`}>
-                            {ev.status}
-                        </span>
-                    </div>
+
+                    {events.map((ev, i) => (
+                        <div key={i} className="w-full p-6 bg-white border-b border-grey-4/50 grid grid-cols-[11rem_11rem_1fr_11rem] gap-4 items-center">
+                            <div className="text-grey-8 text-sm font-medium">{ev.date}</div>
+                            <div>
+                                <span className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium border transform transition-transform hover:scale-105
+                                    ${ev.typeColor === 'exam' ? 'bg-[#E8E7F4] text-[#2D2A74] border-[#4B46A9]' : ''}
+                                    ${ev.typeColor === 'vacation' ? 'bg-[#E8E7F4] text-[#2D2A74] border-[#4B46A9]' : ''}
+                                    ${ev.typeColor === 'ptm' ? 'bg-[#E8E7F4] text-[#2D2A74] border-[#4B46A9]' : ''}
+                                `}>
+                                    {ev.icon ? (
+                                        <div className="relative w-4 h-4 shrink-0">
+                                            <Image
+                                                src={ev.icon}
+                                                alt={ev.type}
+                                                fill
+                                                className="object-contain"
+                                            />
+                                        </div>
+                                    ) : (
+                                        <span className="w-2 h-2 rounded-full bg-current shrink-0"></span>
+                                    )}
+                                    <span className="leading-none">{ev.type}</span>
+                                </span>
+                            </div>
+                            <div className="text-black text-sm">{ev.desc}</div>
+                            <div>
+                                <span className={`px-4 py-2 rounded-full text-xs border 
+                                    ${ev.status === 'Completed' ? 'bg-emerald-50 text-emerald-600 border-emerald-200' : 'bg-grey-1 text-grey-7 border-grey-4'}
+                                `}>
+                                    {ev.status}
+                                </span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-            ))}
+            </div>
         </div>
     );
 }
 
 function ExamRow({ date, type, details }: { date: string, type: string, details: string }) {
     return (
-        <div className="w-full p-6 bg-white border-b border-grey-4/50 flex flex-col md:flex-row gap-4">
-            <div className="w-full md:w-44 text-grey-7 text-sm font-medium">{date}</div>
-            <div className="w-full md:w-80 text-[#262366] text-sm">{type}</div>
+        <div className="w-full p-6 bg-white border-b border-grey-4/50 flex gap-4">
+            <div className="w-44 shrink-0 text-grey-7 text-sm font-medium">{date}</div>
+            <div className="w-80 shrink-0 text-[#262366] text-sm">{type}</div>
             <div className="flex-1 text-grey-7 text-sm leading-5">{details}</div>
         </div>
     );

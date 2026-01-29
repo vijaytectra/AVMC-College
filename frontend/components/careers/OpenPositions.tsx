@@ -91,8 +91,13 @@ const OpenPositions: React.FC = () => {
     const totalPages = Math.ceil(jobs.length / itemsPerPage);
     const currentJobs = jobs.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
 
+    const listRef = React.useRef<HTMLDivElement>(null);
+
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
+        if (listRef.current) {
+            listRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
     };
 
     return (
@@ -154,7 +159,7 @@ const OpenPositions: React.FC = () => {
                 </div>
 
             </div>
-            <div className="w-full max-w-[1241px]">
+            <div ref={listRef} className="w-full max-w-[1241px]">
                 <div className="mb-6">
                     <div className="text-grey-8 text-sm font-delight font-light tracking-[0.56px]">
                         Showing {jobs.length} positions

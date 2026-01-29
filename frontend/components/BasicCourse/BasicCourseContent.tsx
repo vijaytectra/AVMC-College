@@ -7,7 +7,7 @@ import Image from "next/image";
 const BasicCourseContent: React.FC = () => {
     const [openDay, setOpenDay] = React.useState<number | null>(0);
     return (
-        <div className="w-full bg-Background flex flex-col items-center overflow-hidden pb-10">
+        <div className="w-full bg-[#F8FAFC] flex flex-col items-center overflow-hidden pb-10">
             {/* Hero Section */}
             <div className="w-full max-w-[1040px] flex flex-col items-center mt-12 px-4">
                 <div className="px-5 py-2.5 rounded-[100px] outline outline-1 outline-offset-[-1px] outline-p-2 inline-flex justify-center items-center gap-2.5 mb-6">
@@ -254,10 +254,10 @@ const BasicCourseContent: React.FC = () => {
             <div className="w-full max-w-[1040px] px-4 mt-20">
                 <div className="relative">
                     {/* Background Offset Border */}
-                    <div className="absolute top-[14px] -left-[14px] w-full h-full border-2 border-p-5 rounded-[44px] bg-transparent"></div>
+                    <div className="absolute top-[14px] -left-[14px] w-full h-full border-2 border-p-5 rounded-[44px] rounded-tl-none bg-transparent"></div>
 
                     {/* Main Card */}
-                    <div className="relative bg-white rounded-[44px] border-2 border-p-5 p-8 md:p-12 flex flex-col items-center gap-8 text-center z-10">
+                    <div className="relative bg-white rounded-[44px] rounded-tl-none border-2 border-p-5 p-8 md:p-12 flex flex-col items-center gap-8 text-center z-10">
                         <div className="p-3 outline outline-2 outline-p-2 inline-flex justify-start items-center gap-2.5">
                             <div className="w-14 h-14 px-2.5 py-[5px] flex justify-start items-center gap-2.5">
                                 <Image src="/icons/shield%20(1).svg" alt="Shield" className="w-10 h-12" width={40} height={48} />

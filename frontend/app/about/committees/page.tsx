@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CommitteesPage() {
     return (
-        <div className="w-full bg-grey-1 text-grey-10">
+        <div className="w-full bg-[#F8FAFC] text-grey-10">
             {/* Hero Section */}
             <section className="relative w-full h-auto aspect-[1636/1255] md:aspect-auto md:h-[600px] flex items-center justify-center overflow-hidden">
                 {/* Background Image */}
@@ -17,14 +17,14 @@ export default function CommitteesPage() {
                 </div>
 
                 {/* Central Card Overlay */}
-                <div className="relative z-10 w-[60%] md:w-96 h-36 bg-white/20 border-l-[11px] border-s6 flex flex-col items-center justify-center gap-8">
+                <div className="relative z-10 w-[60%] md:w-96 h-36 bg-white/20 border-l-[11px] border-s6 border-t border-b border-t-white border-b-white flex flex-col items-center justify-center gap-8">
                     <div className="self-stretch justify-center text-center text-white text-5xl font-normal font-gc-amelie italic">Committees</div>
                     <div className="self-stretch text-center justify-center text-grey-1 text-sm font-normal font-delight uppercase tracking-wide font-weight-100">home &gt; About &gt; committees</div>
                 </div>
             </section>
 
             {/* Content Section */}
-            <section className="w-full relative bg-white py-10">
+            <section className="w-full relative bg-[#F8FAFC] py-10">
                 <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-[100px] flex flex-col justify-start items-start gap-8">
 
                     {/* Search Bar - Positioned as per screenshot (Left Aligned) */}

@@ -34,7 +34,7 @@ const AntiRaggingContent: React.FC = () => {
     return (
         <div className="w-full relative min-h-screen pb-20 bg-white overflow-hidden">
             {/* Background Images - Positioned exactly as requested */}
-            <div className="absolute top-[130px] -left-[19px] w-[1459px] h-[1852px] pointer-events-none -z-0">
+            <div className="absolute top-[130px] left-0 w-full h-[1852px] pointer-events-none -z-0">
                 <Image
                     src="/images/antirag bg.png"
                     alt="background pattern top"
@@ -43,7 +43,7 @@ const AntiRaggingContent: React.FC = () => {
                     priority
                 />
             </div>
-            <div className="absolute top-[1922px] left-0 w-[1459px] h-[1852px] pointer-events-none -z-0">
+            <div className="absolute top-[1922px] left-0 w-full h-[1852px] pointer-events-none -z-0">
                 <Image
                     src="/images/antirag bg.png"
                     alt="background pattern bottom"

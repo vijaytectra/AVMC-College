@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const MedicalEducationUnitContent: React.FC = () => {
     return (
-        <div className="w-full bg-white flex flex-col items-center">
+        <div className="w-full bg-[#F8FAFC] flex flex-col items-center">
             {/* Top Image Section */}
             <div className="relative w-full h-auto">
                 <Image
@@ -40,7 +40,7 @@ const MedicalEducationUnitContent: React.FC = () => {
                         </div>
                         <div className="self-stretch flex flex-col justify-start items-center gap-1">
                             <div className="self-stretch text-center justify-start text-p-7 text-5xl font-normal font-gc-amelie italic">Medical Education Unit</div>
-                            <div className="self-stretch text-center justify-start text-grey-7 text-sm font-normal font-delight leading-6 tracking-tight">Empowering faculty and students with modern medical education methodologies aligned with NMC standards and Competency-Based Medical Education (CBME) framework.</div>
+                            <div className="w-full max-w-[760px] mx-auto text-center justify-start text-grey-7 text-sm font-normal font-delight leading-6 tracking-tight">Empowering faculty and students with modern medical education methodologies <br className="hidden md:block" /> aligned with NMC standards and Competency-Based Medical Education (CBME) framework.</div>
                         </div>
                     </div>
 
@@ -200,7 +200,7 @@ const MedicalEducationUnitContent: React.FC = () => {
                             img: "/images/image%2084.png"
                         }
                     ].map((member, index) => (
-                        <div key={index} className="w-48 inline-flex flex-col justify-start items-center gap-6 mx-auto">
+                        <div key={index} className="w-full inline-flex flex-col justify-start items-center gap-6 mx-auto">
                             <div className="w-32 h-36 relative bg-p-2 rounded-xl overflow-hidden">
                                 <Image
                                     className="w-40 h-56 left-[-6px] top-[-9px] absolute object-cover"
@@ -212,12 +212,12 @@ const MedicalEducationUnitContent: React.FC = () => {
                             </div>
                             <div className="self-stretch flex flex-col justify-start items-start gap-3.5">
                                 <div className="self-stretch flex flex-col justify-start items-center gap-2">
-                                    <div className="w-44 text-center justify-start text-p-7 text-lg font-medium font-delight leading-6 tracking-tight">{member.name}</div>
-                                    <div className="w-44 text-center justify-start text-grey-9 text-sm font-normal font-delight leading-6 tracking-tight">{member.role}</div>
+                                    <div className="w-full text-center justify-start text-p-7 text-lg font-medium font-delight leading-6 tracking-tight">{member.name}</div>
+                                    <div className="w-full text-center justify-start text-grey-9 text-sm font-normal font-delight leading-6 tracking-tight">{member.role}</div>
                                 </div>
                                 <div className="self-stretch flex flex-col justify-start items-center">
-                                    <div className="w-48 text-center justify-start text-grey-6 text-sm font-normal font-delight leading-6 tracking-tight">{member.dept}</div>
-                                    <div className="w-48 text-center justify-start text-grey-6 text-xs font-normal font-delight leading-6 tracking-tight">{member.qual}</div>
+                                    <div className="w-full text-center justify-start text-grey-6 text-sm font-normal font-delight leading-6 tracking-tight">{member.dept}</div>
+                                    <div className="w-full text-center justify-start text-grey-6 text-xs font-normal font-delight leading-6 tracking-tight">{member.qual}</div>
                                 </div>
                             </div>
                         </div>
@@ -228,12 +228,22 @@ const MedicalEducationUnitContent: React.FC = () => {
             {/* Accreditations & Affiliations Section */}
             <div className="w-[85%] md:w-[75%] max-w-[1040px] mx-auto pb-20">
                 <div className="w-full p-8 relative bg-p-7 rounded-xl flex flex-col justify-start items-center gap-11 overflow-hidden">
-                    <div className="w-72 h-64 origin-top-left rotate-[-36.63deg] bg-white/10 absolute top-0 left-0" />
-                    <div className="w-full md:w-[523px] flex flex-col justify-start items-center gap-3 relative z-10">
-                        <div className="self-stretch text-center justify-center text-white text-3xl font-normal font-gc-amelie italic leading-10">Accreditations & Affiliations</div>
-                        <div className="w-full text-center justify-start text-grey-5 text-base font-normal font-delight leading-7 tracking-tight">Our institution maintains the highest standards of medical education as recognized by leading accreditation bodies.</div>
+
+
+                    {/* Decorative Images */}
+                    <div className="hidden md:block absolute left-0 top-0 h-full w-[355px] pointer-events-none z-0">
+                        <Image src="/images/open positions 1.png" alt="Decorative Left" fill className="object-cover" />
                     </div>
-                    <div className="self-stretch flex justify-center items-center gap-2 flex-wrap content-center relative z-10">
+
+                    <div className="hidden md:block absolute right-0 bottom-0 h-[300px] w-[300px] pointer-events-none z-0">
+                        <Image src="/images/open position 3.png" alt="Decorative Right Bottom" fill className="object-contain" />
+                    </div>
+
+                    <div className="w-full max-w-[760px] flex flex-col justify-start items-center gap-3 relative z-10">
+                        <div className="self-stretch text-center justify-center text-white text-3xl font-normal font-gc-amelie italic leading-10">Accreditations & Affiliations</div>
+                        <div className="w-full text-center justify-start text-grey-5 text-base font-normal font-delight leading-7 tracking-tight">Our institution maintains the highest standards of medical education as recognized by <br className="hidden md:block" /> leading accreditation bodies.</div>
+                    </div>
+                    <div className="self-stretch flex justify-center items-center gap-4 flex-wrap content-center relative z-10">
                         {[
                             "NMC Recognized",
                             "NAAC Accredited",
@@ -241,7 +251,7 @@ const MedicalEducationUnitContent: React.FC = () => {
                             "VMRF (Deemed University)",
                             "NTTC, JIPMER Nodal Center"
                         ].map((item, index) => (
-                            <div key={index} className="px-3 py-1.5 bg-p-6 rounded-[100px] outline outline-1 outline-offset-[-1px] outline-p-5 flex justify-start items-center gap-[5px]">
+                            <div key={index} className="px-5 py-2 bg-transparent rounded-[100px] border border-[#524F91] flex justify-start items-center gap-[5px]">
                                 <div className="text-center justify-start text-white text-sm font-normal font-delight leading-6 tracking-tight">{item}</div>
                             </div>
                         ))}
